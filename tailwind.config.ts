@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'alice': ['Alice', 'serif'],
+				'raleway': ['Raleway', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +56,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				golden: 'hsl(var(--golden))',
+				'golden-hover': 'hsl(var(--golden-hover))',
+				'beige-light': 'hsl(var(--beige-light))',
+				'beige-soft': 'hsl(var(--beige-soft))',
+				'navy-blue': 'hsl(var(--navy-blue))',
+				'navy-blue-light': 'hsl(var(--navy-blue-light))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

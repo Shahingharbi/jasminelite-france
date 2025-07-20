@@ -1,42 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Raleway:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* JasminElite Conciergerie Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* JasminElite Brand Colors */
+    --background: 42 58% 83%; /* Beige clair #F5DEB3 */
+    --foreground: 210 55% 23%; /* Bleu nuit #1E3D59 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%; /* Blanc pour les cartes */
+    --card-foreground: 210 55% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 55% 23%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 55% 23%; /* Bleu nuit #1E3D59 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 42 58% 83%; /* Beige clair */
+    --secondary-foreground: 210 55% 23%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 42 45% 90%;
+    --muted-foreground: 210 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 40% 50%; /* Doré #AE9650 */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 35% 85%;
+    --input: 0 0% 100%;
+    --ring: 45 40% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom JasminElite tokens */
+    --golden: 45 40% 50%; /* Doré #AE9650 */
+    --golden-hover: 45 45% 45%;
+    --beige-light: 42 58% 83%;
+    --beige-soft: 42 45% 90%;
+    --navy-blue: 210 55% 23%;
+    --navy-blue-light: 210 45% 35%;
+
+    /* Gradients */
+    --gradient-golden: linear-gradient(135deg, hsl(var(--golden)), hsl(45 45% 55%));
+    --gradient-beige: linear-gradient(180deg, hsl(var(--beige-light)), hsl(var(--beige-soft)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(var(--golden) / 0.1);
+    --shadow-elegant: 0 8px 32px hsl(var(--navy-blue) / 0.15);
+    --shadow-card: 0 2px 16px hsl(var(--navy-blue) / 0.08);
+
+    /* Animation tokens */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +122,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-raleway;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-alice;
+  }
+}
+
+@layer components {
+  .btn-golden {
+    @apply bg-accent text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 hover:bg-[hsl(var(--golden-hover))];
+  }
+
+  .card-elegant {
+    @apply bg-card rounded-xl p-6 shadow-[var(--shadow-card)] border border-border/50 transition-all duration-300 hover:shadow-[var(--shadow-elegant)];
+  }
+
+  .text-scroll {
+    @apply animate-marquee whitespace-nowrap;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .font-alice {
+    font-family: 'Alice', serif;
+  }
+
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .bg-gradient-golden {
+    background: var(--gradient-golden);
+  }
+
+  .bg-gradient-beige {
+    background: var(--gradient-beige);
+  }
+
+  .transition-custom {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
   }
 }
