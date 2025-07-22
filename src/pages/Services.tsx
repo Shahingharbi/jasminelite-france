@@ -279,7 +279,7 @@ const Services = () => {
                 </div>
                 <div className="pt-6">
                   <Link to="/contact">
-                    <Button className="btn-golden text-lg px-8 py-4">
+                    <Button className="btn-golden text-lg px-6 py-3 w-full sm:w-auto">
                       Contactez-nous pour un devis gratuit
                     </Button>
                   </Link>

@@ -5,13 +5,15 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo et Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-golden rounded-lg flex items-center justify-center">
-                <span className="text-white font-alice font-bold text-lg">JE</span>
-              </div>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/src/assets/logo-jasminelite.png" 
+                alt="JasminElite Conciergerie" 
+                className="h-10 w-auto"
+              />
               <div>
                 <span className="font-alice text-xl font-bold">JasminElite</span>
                 <span className="block text-sm text-primary-foreground/70 uppercase tracking-wider">Conciergerie</span>
@@ -70,30 +72,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Réseaux Sociaux */}
-          <div className="space-y-4">
-            <h3 className="font-alice text-lg font-semibold">Suivez-nous</h3>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors group"
-              >
-                <Facebook className="w-5 h-5 text-primary-foreground/70 group-hover:text-white" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors group"
-              >
-                <Instagram className="w-5 h-5 text-primary-foreground/70 group-hover:text-white" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors group"
-              >
-                <Linkedin className="w-5 h-5 text-primary-foreground/70 group-hover:text-white" />
-              </a>
-            </div>
-          </div>
         </div>
 
         {/* Copyright */}

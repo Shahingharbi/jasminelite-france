@@ -186,8 +186,12 @@ const Index = () => {
                 </ul>
               </div>
               <div className="lg:order-2">
-                <div className="bg-gradient-beige rounded-2xl p-8 h-80 flex items-center justify-center">
-                  <Home className="w-32 h-32 text-accent" />
+                <div className="rounded-2xl p-8 h-80 overflow-hidden">
+                  <img 
+                    src="/src/assets/step-audit.jpg" 
+                    alt="Audit professionnel de propriété"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -224,8 +228,12 @@ const Index = () => {
                 </ul>
               </div>
               <div className="lg:order-1">
-                <div className="bg-gradient-beige rounded-2xl p-8 h-80 flex items-center justify-center">
-                  <Camera className="w-32 h-32 text-accent" />
+                <div className="rounded-2xl p-8 h-80 overflow-hidden">
+                  <img 
+                    src="/src/assets/step-listing.jpg" 
+                    alt="Optimisation d'annonces immobilières"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -253,8 +261,12 @@ const Index = () => {
                 </Link>
               </div>
               <div className="lg:order-2">
-                <div className="bg-gradient-beige rounded-2xl p-8 h-80 flex items-center justify-center">
-                  <Shield className="w-32 h-32 text-accent" />
+                <div className="rounded-2xl p-8 h-80 overflow-hidden">
+                  <img 
+                    src="/src/assets/step-management.jpg" 
+                    alt="Gestion complète et service premium"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
