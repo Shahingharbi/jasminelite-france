@@ -11,10 +11,12 @@ const BlogArticle1 = () => {
       <section className="relative py-16 bg-beige-soft">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <Link to="/blog" className="inline-flex items-center text-accent hover:text-golden-hover transition-colors mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Tous les articles
-            </Link>
+            <div className="inline-block w-full sm:w-auto mb-8">
+              <Link to="/blog" className="inline-flex items-center text-accent hover:text-golden-hover transition-colors">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Tous les articles
+              </Link>
+            </div>
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4 text-sm text-foreground/60">
@@ -54,7 +56,9 @@ const BlogArticle1 = () => {
               <img 
                 src={preparationImage} 
                 alt="Préparation d'un bien pour la location saisonnière"
-                className="w-full h-96 object-cover"
+                width="800"
+                height="384"
+                className="w-full h-96 object-cover min-h-[300px]"
               />
             </div>
           </div>
@@ -132,8 +136,8 @@ const BlogArticle1 = () => {
                     <p className="text-foreground/80">
                       Nos experts vous accompagnent dans chaque étape de la préparation de votre propriété pour maximiser vos revenus.
                     </p>
-                    <Link to="/contact">
-                      <Button className="btn-golden">
+                    <Link to="/contact" className="inline-block w-full sm:w-auto">
+                      <Button className="btn-golden w-full max-w-xs mx-auto sm:w-auto">
                         Demander un audit gratuit
                       </Button>
                     </Link>

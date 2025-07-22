@@ -106,14 +106,14 @@ const Index = () => {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact">
-                  <Button className="btn-golden text-lg px-8 py-4">
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Link to="/contact" className="w-full sm:w-auto">
+                  <Button className="btn-golden text-lg px-8 py-4 w-full sm:w-auto">
                     Contactez-nous
                   </Button>
                 </Link>
-                <Link to="/services">
-                  <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white">
+                <Link to="/services" className="w-full sm:w-auto">
+                  <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full sm:w-auto">
                     Découvrez nos services
                   </Button>
                 </Link>
@@ -190,7 +190,9 @@ const Index = () => {
                   <img 
                     src="/src/assets/step-audit.jpg" 
                     alt="Audit professionnel de propriété"
-                    className="w-full h-full object-cover rounded-xl"
+                    width="500"
+                    height="320"
+                    className="w-full h-full object-cover rounded-xl min-h-[200px]"
                   />
                 </div>
               </div>
@@ -232,7 +234,9 @@ const Index = () => {
                   <img 
                     src="/src/assets/step-listing.jpg" 
                     alt="Optimisation d'annonces immobilières"
-                    className="w-full h-full object-cover rounded-xl"
+                    width="500"
+                    height="320"
+                    className="w-full h-full object-cover rounded-xl min-h-[200px]"
                   />
                 </div>
               </div>
@@ -254,8 +258,8 @@ const Index = () => {
                   nettoyage, maintenance, communication. Vous recevez vos revenus 
                   directement, sans aucun tracas.
                 </p>
-                <Link to="/contact">
-                  <Button className="btn-golden text-lg px-8 py-4 mt-6">
+                <Link to="/contact" className="inline-block w-full sm:w-auto">
+                  <Button className="btn-golden text-lg px-8 py-4 mt-6 w-full max-w-xs mx-auto sm:w-auto">
                     Commencer maintenant
                   </Button>
                 </Link>
@@ -265,7 +269,9 @@ const Index = () => {
                   <img 
                     src="/src/assets/step-management.jpg" 
                     alt="Gestion complète et service premium"
-                    className="w-full h-full object-cover rounded-xl"
+                    width="500"
+                    height="320"
+                    className="w-full h-full object-cover rounded-xl min-h-[200px]"
                   />
                 </div>
               </div>
@@ -308,8 +314,8 @@ const Index = () => {
           </div>
 
           <div className="text-center">
-            <Link to="/services">
-              <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white">
+            <Link to="/services" className="inline-block w-full sm:w-auto">
+              <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full max-w-xs mx-auto sm:w-auto">
                 Découvrez tous nos services
               </Button>
             </Link>

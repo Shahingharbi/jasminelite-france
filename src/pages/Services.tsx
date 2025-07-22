@@ -30,8 +30,8 @@ const Services = () => {
                 Une gamme complète de services pour maximiser vos revenus locatifs 
                 et vous offrir une tranquillité d'esprit totale.
               </p>
-              <Link to="/contact">
-                <Button className="btn-golden text-lg px-8 py-4">
+              <Link to="/contact" className="inline-block w-full sm:w-auto">
+                <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
                   Demander un devis gratuit
                 </Button>
               </Link>
@@ -85,7 +85,9 @@ const Services = () => {
                   <img 
                     src={serviceListingImage} 
                     alt="Création d'annonce professionnelle" 
-                    className="w-full h-80 object-cover"
+                    width="500"
+                    height="320"
+                    className="w-full h-80 object-cover min-h-[300px]"
                   />
                 </div>
               </div>
@@ -131,7 +133,9 @@ const Services = () => {
                   <img 
                     src={servicePhotoImage} 
                     alt="Photographie professionnelle d'intérieur" 
-                    className="w-full h-80 object-cover"
+                    width="500"
+                    height="320"
+                    className="w-full h-80 object-cover min-h-[300px]"
                   />
                 </div>
               </div>
@@ -181,7 +185,9 @@ const Services = () => {
                   <img 
                     src={serviceCommunicationImage} 
                     alt="Service clientèle et accueil des voyageurs" 
-                    className="w-full h-80 object-cover"
+                    width="500"
+                    height="320"
+                    className="w-full h-80 object-cover min-h-[300px]"
                   />
                 </div>
               </div>
@@ -231,7 +237,9 @@ const Services = () => {
                   <img 
                     src={serviceMaintenanceImage} 
                     alt="Services de nettoyage et maintenance" 
-                    className="w-full h-80 object-cover"
+                    width="500"
+                    height="320"
+                    className="w-full h-80 object-cover min-h-[300px]"
                   />
                 </div>
               </div>
@@ -278,8 +286,8 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="pt-6">
-                  <Link to="/contact">
-                    <Button className="btn-golden text-lg px-6 py-3 w-full sm:w-auto">
+                  <Link to="/contact" className="inline-block w-full sm:w-auto">
+                    <Button className="btn-golden text-base px-6 py-3 w-full max-w-sm mx-auto sm:w-auto sm:text-lg">
                       Contactez-nous pour un devis gratuit
                     </Button>
                   </Link>

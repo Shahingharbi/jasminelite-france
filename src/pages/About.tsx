@@ -28,8 +28,8 @@ const About = () => {
                 en alliant expertise locale, technologie moderne et service d'exception 
                 pour maximiser vos revenus en toute sérénité.
               </p>
-              <Link to="/contact">
-                <Button className="btn-golden text-lg px-8 py-4">
+              <Link to="/contact" className="inline-block w-full sm:w-auto">
+                <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
                   Rencontrons-nous
                 </Button>
               </Link>
@@ -89,7 +89,9 @@ const About = () => {
                 <img 
                   src={teamImage} 
                   alt="Équipe JasminElite Conciergerie" 
-                  className="w-full h-96 object-cover"
+                  width="500"
+                  height="384"
+                  className="w-full h-96 object-cover min-h-[300px]"
                 />
               </div>
             </div>
@@ -175,11 +177,11 @@ const About = () => {
               </div>
 
               <div className="pt-4">
-                <Link to="/services">
-                  <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white">
-                    Découvrir nos services
-                  </Button>
-                </Link>
+                  <Link to="/services" className="inline-block w-full sm:w-auto">
+                    <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full max-w-xs mx-auto sm:w-auto">
+                      Découvrir nos services
+                    </Button>
+                  </Link>
               </div>
             </div>
           </div>
@@ -203,14 +205,14 @@ const About = () => {
                   pour optimiser leurs revenus locatifs en toute sérénité. 
                   Parlons de votre projet !
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/contact">
-                    <Button className="btn-golden text-lg px-8 py-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
+                  <Link to="/contact" className="w-full sm:w-auto">
+                    <Button className="btn-golden text-lg px-8 py-4 w-full sm:w-auto">
                       Contactez-nous
                     </Button>
                   </Link>
-                  <Link to="/services">
-                    <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white">
+                  <Link to="/services" className="w-full sm:w-auto">
+                    <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full sm:w-auto">
                       Voir nos services
                     </Button>
                   </Link>

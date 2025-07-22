@@ -68,7 +68,9 @@ const Blog = () => {
                     <img 
                       src={article.image} 
                       alt={article.title}
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      width="400"
+                      height="256"
+                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 min-h-[200px]"
                     />
                   </div>
 
@@ -105,8 +107,8 @@ const Blog = () => {
                         <span className="text-sm text-foreground/60">{article.author}</span>
                       </div>
                       
-                      <Link to={`/blog/${article.id}`}>
-                        <Button variant="ghost" className="text-accent hover:text-white hover:bg-accent group/btn">
+                      <Link to={`/blog/${article.id}`} className="w-full sm:w-auto">
+                        <Button variant="ghost" className="text-accent hover:text-white hover:bg-accent group/btn w-full sm:w-auto">
                           Lire l'article
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                         </Button>
@@ -133,8 +135,8 @@ const Blog = () => {
                   Recevez régulièrement nos conseils d'experts pour optimiser vos revenus locatifs 
                   et rester au fait des dernières tendances du marché algérien.
                 </p>
-                <Link to="/contact">
-                  <Button className="btn-golden text-lg px-8 py-4">
+                <Link to="/contact" className="inline-block w-full sm:w-auto">
+                  <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
                     Nous contacter
                   </Button>
                 </Link>

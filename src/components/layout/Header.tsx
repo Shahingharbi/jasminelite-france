@@ -26,16 +26,12 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 transition-transform hover:scale-105">
+          <Link to="/" className="flex items-center transition-transform hover:scale-105">
             <img 
               src="/src/assets/logo-jasminelite.png" 
               alt="JasminElite Conciergerie" 
               className="h-10 w-auto"
             />
-            <div className="hidden sm:block">
-              <span className="font-alice text-xl font-bold text-primary">JasminElite</span>
-              <span className="block text-xs text-muted-foreground uppercase tracking-wider">Conciergerie</span>
-            </div>
           </Link>
 
           {/* Navigation Desktop */}

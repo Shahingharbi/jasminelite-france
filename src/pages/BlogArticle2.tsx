@@ -11,10 +11,12 @@ const BlogArticle2 = () => {
       <section className="relative py-16 bg-beige-soft">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            <Link to="/blog" className="inline-flex items-center text-accent hover:text-golden-hover transition-colors mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Tous les articles
-            </Link>
+            <div className="inline-block w-full sm:w-auto mb-8">
+              <Link to="/blog" className="inline-flex items-center text-accent hover:text-golden-hover transition-colors">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Tous les articles
+              </Link>
+            </div>
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4 text-sm text-foreground/60">
@@ -54,7 +56,9 @@ const BlogArticle2 = () => {
               <img 
                 src={conciergeImage} 
                 alt="Service de conciergerie haut de gamme"
-                className="w-full h-96 object-cover"
+                width="800"
+                height="384"
+                className="w-full h-96 object-cover min-h-[300px]"
               />
             </div>
           </div>
@@ -144,8 +148,8 @@ const BlogArticle2 = () => {
                     <p className="text-foreground/80">
                       Découvrez concrètement ce que JasminElite peut faire pour votre propriété avec un audit gratuit et personnalisé.
                     </p>
-                    <Link to="/contact">
-                      <Button className="btn-golden">
+                    <Link to="/contact" className="inline-block w-full sm:w-auto">
+                      <Button className="btn-golden w-full max-w-xs mx-auto sm:w-auto">
                         Demander un audit gratuit
                       </Button>
                     </Link>
