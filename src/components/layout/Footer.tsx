@@ -8,17 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Logo et Description */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
-              <img 
-                src="/src/assets/logo-jasminelite.png" 
-                alt="JasminElite Conciergerie" 
-                className="h-10 w-auto"
-              />
-              <div>
-                <span className="font-alice text-xl font-bold">JasminElite</span>
-                <span className="block text-sm text-primary-foreground/70 uppercase tracking-wider">Conciergerie</span>
-              </div>
-            </div>
+            <img 
+              src="/src/assets/logo-jasminelite.png" 
+              alt="JasminElite" 
+              className="h-10 w-auto"
+            />
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Votre conciergerie haut de gamme en Algérie. Nous maximisons vos revenus locatifs 
               avec un service d'excellence et une tranquillité d'esprit totale.
@@ -77,7 +71,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/60">
-            <p>&copy; 2024 JasminElite Conciergerie. Tous droits réservés.</p>
+            <p>&copy; 2024 JasminElite. Tous droits réservés.</p>
             <p className="mt-2 md:mt-0">Conçu avec passion en Algérie</p>
           </div>
         </div>

@@ -29,7 +29,7 @@ const Header = () => {
           <Link to="/" className="flex items-center transition-transform hover:scale-105">
             <img 
               src="/src/assets/logo-jasminelite.png" 
-              alt="JasminElite Conciergerie" 
+              alt="JasminElite" 
               className="h-10 w-auto"
             />
           </Link>

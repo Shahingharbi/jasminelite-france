@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Star, Users, Shield, Sparkles, Camera, Calendar, Zap, Home, Brush, Shirt } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { EstimationModal } from "@/components/ui/EstimationModal";
 import heroImage from "@/assets/hero-home.jpg";
 
 const Index = () => {
+  const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
+  
   const scrollingItems = [
     "Toute l'Algérie",
     "Revenus complémentaires", 
@@ -107,11 +111,12 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Link to="/contact" className="w-full sm:w-auto">
-                  <Button className="btn-golden text-lg px-8 py-4 w-full sm:w-auto">
-                    Contactez-nous
-                  </Button>
-                </Link>
+                <Button 
+                  onClick={() => setIsEstimationModalOpen(true)}
+                  className="btn-golden text-lg px-8 py-4 w-full sm:w-auto"
+                >
+                  Estimez vos revenus
+                </Button>
                 <Link to="/services" className="w-full sm:w-auto">
                   <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full sm:w-auto">
                     Découvrez nos services
@@ -355,6 +360,12 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Estimation Modal */}
+      <EstimationModal 
+        isOpen={isEstimationModalOpen}
+        onClose={() => setIsEstimationModalOpen(false)}
+      />
     </Layout>
   );
 };

@@ -123,12 +123,11 @@ const Contact = () => {
                   <div className="w-16 h-16 bg-card rounded-full flex items-center justify-center mx-auto p-2 shadow-sm">
                     <img 
                       src="/src/assets/logo-jasminelite.png" 
-                      alt="JasminElite Conciergerie" 
+                      alt="JasminElite" 
                       className="w-full h-full object-contain"
                     />
                   </div>
                   <div>
-                    <h3 className="font-alice text-xl font-bold text-primary mb-2">JasminElite Conciergerie</h3>
                     <p className="text-foreground/70 mb-6">Votre conciergerie haut de gamme en Algérie</p>
                   </div>
                   
