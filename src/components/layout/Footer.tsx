@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import logoImage from "@/assets/logo-jasminelite.png";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           {/* Logo et Description */}
           <div className="space-y-4">
             <img 
-              src="/src/assets/logo-jasminelite.png" 
+              src={logoImage}
               alt="JasminElite" 
               className="h-28 w-auto"
             />

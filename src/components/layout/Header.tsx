@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/logo-jasminelite.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,13 +23,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <header className="top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-[7.5rem]">
+        <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center transition-transform hover:scale-105">
             <img 
-              src="/src/assets/logo-jasminelite.png" 
+              src={logoImage} 
               alt="JasminElite" 
               className="h-28 w-auto"
             />

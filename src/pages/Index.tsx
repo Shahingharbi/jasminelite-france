@@ -5,6 +5,9 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { EstimationModal } from "@/components/ui/EstimationModal";
 import heroImage from "@/assets/hero-home.jpg";
+import stepAuditImage from "@/assets/step-audit.jpg";
+import stepListingImage from "@/assets/step-listing.jpg";
+import stepManagementImage from "@/assets/step-management.jpg";
 
 const Index = () => {
   const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
@@ -193,7 +196,7 @@ const Index = () => {
               <div className="lg:order-2">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
-                    src="/src/assets/step-audit.jpg" 
+                    src={stepAuditImage}
                     alt="Audit professionnel de propriété"
                     width="500"
                     height="320"
@@ -237,7 +240,7 @@ const Index = () => {
               <div className="lg:order-1">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
-                    src="/src/assets/step-listing.jpg" 
+                    src={stepListingImage} 
                     alt="Optimisation d'annonces immobilières"
                     width="500"
                     height="320"
@@ -272,7 +275,7 @@ const Index = () => {
               <div className="lg:order-2">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
-                    src="/src/assets/step-management.jpg" 
+                    src={stepManagementImage}
                     alt="Gestion complète et service premium"
                     width="500"
                     height="320"

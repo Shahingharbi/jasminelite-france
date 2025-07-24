@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { sendContactEmail } from "@/utils/emailjs";
 import heroImage from "@/assets/hero-contact.jpg";
+import logoImage from "@/assets/logo-jasminelite.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -122,7 +123,7 @@ const Contact = () => {
                 <div className="text-center space-y-6">
                   <div className="h-28 bg-card rounded-full flex items-center justify-center mx-auto p-2 shadow-sm">
                     <img 
-                      src="/src/assets/logo-jasminelite.png" 
+                      src={logoImage}
                       alt="JasminElite" 
                       className="w-full h-full object-contain"
                     />
