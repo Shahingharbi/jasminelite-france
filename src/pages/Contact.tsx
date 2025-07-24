@@ -120,7 +120,7 @@ const Contact = () => {
             <div className="space-y-8">
               <div className="card-elegant">
                 <div className="text-center space-y-6">
-                  <div className="w-16 h-16 bg-card rounded-full flex items-center justify-center mx-auto p-2 shadow-sm">
+                  <div className="h-28 bg-card rounded-full flex items-center justify-center mx-auto p-2 shadow-sm">
                     <img 
                       src="/src/assets/logo-jasminelite.png" 
                       alt="JasminElite" 

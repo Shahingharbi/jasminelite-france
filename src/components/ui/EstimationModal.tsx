@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { X, MapPin, Home } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { X, Home } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,11 +10,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import estimationImage from "@/assets/estimation-modal.jpg";
 
-// EmailJS configuration - À remplir avec vos propres identifiants
+// CONFIGURATION EMAILJS
 const EMAILJS_CONFIG = {
-  serviceID: 'YOUR_SERVICE_ID', // Remplacez par votre Service ID
-  templateID: 'YOUR_TEMPLATE_ID', // Remplacez par votre Template ID  
-  publicKey: 'YOUR_PUBLIC_KEY', // Remplacez par votre Public Key
+  serviceID: 'service_2wrmsdv',
+  templateID: 'template_xy7fwcj',
+  publicKey: '_X-hiqRvUJ_XxmN3s',
 };
 
 interface EstimationModalProps {
@@ -43,30 +44,55 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const templateParams = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      surface: formData.surface,
+      typologie: formData.typologie,
+      description: formData.description,
+    };
+
     try {
-      // Ici, la logique EmailJS sera intégrée plus tard
-      // avec les vrais identifiants
-      console.log('Estimation form data:', formData);
-      
-      toast({
-        title: "Demande envoyée !",
-        description: "Nous vous recontacterons rapidement pour votre estimation.",
-      });
-      
-      onClose();
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        address: '',
-        surface: '',
-        typologie: '',
-        description: ''
-      });
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Demande envoyée !",
+          description: "Nous vous recontacterons rapidement pour votre estimation.",
+        });
+
+        // Reset du formulaire
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          address: '',
+          surface: '',
+          typologie: '',
+          description: ''
+        });
+
+        onClose(); // Fermer le modal
+      } else {
+        toast({
+          title: "Erreur",
+          description: "Impossible d’envoyer votre estimation.",
+          variant: "destructive",
+        });
+      }
     } catch (error) {
+      console.error("Erreur EmailJS :", error);
       toast({
-        title: "Erreur",
+        title: "Erreur technique",
         description: "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       });
@@ -77,7 +103,7 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto [&>button]:hidden">
         <div className="grid lg:grid-cols-2 gap-0 -m-6">
           {/* Image Section */}
           <div className="relative">
@@ -90,7 +116,7 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
           </div>
 
           {/* Form Section */}
-          <div className="p-8 bg-background">
+          <div className="p-8 bg-muted">
             <div className="flex items-center justify-between mb-6">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-alice font-bold text-primary">
@@ -107,89 +133,51 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Section Personnelle */}
+              {/* Infos personnelles */}
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="firstName">Prénom</Label>
-                    <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      className="mt-1"
-                    />
+                    <Input id="firstName" className="bg-white" value={formData.firstName} onChange={(e) => handleInputChange('firstName', e.target.value)} />
                   </div>
                   <div>
                     <Label htmlFor="lastName">Nom</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      className="mt-1"
-                    />
+                    <Input id="lastName" className="bg-white" value={formData.lastName} onChange={(e) => handleInputChange('lastName', e.target.value)} />
                   </div>
                 </div>
-                
                 <div>
                   <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    className="mt-1"
-                  />
+                  <Input id="email" type="email" className="bg-white" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} />
                 </div>
-                
                 <div>
                   <Label htmlFor="phone">Téléphone</Label>
-                  <Input
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    placeholder="Ex : 01 23 45 67 89"
-                    className="mt-1"
-                  />
+                  <Input id="phone" className="bg-white" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} placeholder="Ex : 07 01 23 45 67" />
                 </div>
               </div>
 
-              {/* Section Bien */}
+              {/* Infos sur le bien */}
               <div className="border-t border-border pt-6">
                 <h3 className="text-lg font-alice font-semibold text-primary mb-4 flex items-center">
                   <Home className="w-5 h-5 mr-2 text-accent" />
                   Parlons de votre bien
                 </h3>
-                
                 <div className="space-y-4">
                   <div>
                     <Label htmlFor="address">Adresse</Label>
-                    <Input
-                      id="address"
-                      value={formData.address}
-                      onChange={(e) => handleInputChange('address', e.target.value)}
-                      className="mt-1"
-                    />
+                    <Input id="address" className="bg-white" value={formData.address} onChange={(e) => handleInputChange('address', e.target.value)} />
                   </div>
-                  
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="surface">Superficie (m²)</Label>
-                      <Input
-                        id="surface"
-                        type="number"
-                        value={formData.surface}
-                        onChange={(e) => handleInputChange('surface', e.target.value)}
-                        placeholder="Ex : 75"
-                        className="mt-1"
-                      />
+                      <Input id="surface" className="bg-white" type="number" value={formData.surface} onChange={(e) => handleInputChange('surface', e.target.value)} placeholder="Ex : 75" />
                     </div>
                     <div>
-                      <Label htmlFor="typologie">Typologie</Label>
+                      <Label htmlFor="typologie" >Typologie</Label>
                       <Select onValueChange={(value) => handleInputChange('typologie', value)}>
-                        <SelectTrigger className="mt-1">
+                        <SelectTrigger className="bg-white">
                           <SelectValue placeholder="Choisir..." />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white">
                           <SelectItem value="studio">Studio</SelectItem>
                           <SelectItem value="1-chambre">1 chambre</SelectItem>
                           <SelectItem value="2-chambres">2 chambres</SelectItem>
@@ -199,16 +187,9 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
                       </Select>
                     </div>
                   </div>
-                  
                   <div>
                     <Label htmlFor="description">Description (optionnel)</Label>
-                    <Textarea
-                      id="description"
-                      value={formData.description}
-                      onChange={(e) => handleInputChange('description', e.target.value)}
-                      className="mt-1 min-h-[80px]"
-                      placeholder="Décrivez votre bien..."
-                    />
+                    <Textarea id="description" className="bg-white" value={formData.description} onChange={(e) => handleInputChange('description', e.target.value)} placeholder="Décrivez votre bien..." />
                   </div>
                 </div>
               </div>
@@ -217,11 +198,7 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
                 Tous les champs ne sont pas obligatoires :)
               </div>
 
-              <Button 
-                type="submit" 
-                className="btn-golden w-full text-lg py-3"
-                disabled={isSubmitting}
-              >
+              <Button type="submit" className="btn-golden w-full text-lg py-3" disabled={isSubmitting}>
                 {isSubmitting ? "Envoi en cours..." : "Recevoir mon estimation"}
               </Button>
             </form>
