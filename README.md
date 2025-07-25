@@ -25,7 +25,7 @@ JasminElite Conciergerie est votre partenaire de confiance pour la gestion haut 
 
 ## Contact
 
-📧 **Email** : contact@jasminelite.com  
+📧 **Email** : contact@jasmineliteconcierge.com  
 📱 **Téléphone** : +213 555 123 456  
 📍 **Adresse** : Alger, Algérie
 

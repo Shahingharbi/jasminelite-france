@@ -54,11 +54,11 @@ const Footer = () => {
                 <span>+213 555 123 456</span>
               </a>
               <a 
-                href="mailto:contact@jasminelite.com" 
+                href="mailto:contact@jasmineliteconcierge.com" 
                 className="flex items-center space-x-2 text-primary-foreground/80 hover:text-accent transition-colors text-sm"
               >
                 <Mail className="w-4 h-4" />
-                <span>contact@jasminelite.com</span>
+                <span>contact@jasmineliteconcierge.com</span>
               </a>
               <div className="flex items-start space-x-2 text-primary-foreground/80 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />

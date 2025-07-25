@@ -332,7 +332,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-spacing">
+      <section className="section-spacing hidden">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary mb-4">

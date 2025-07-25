@@ -133,9 +133,9 @@ const Contact = () => {
                   </div>
                   
                   <div className="space-y-4">
-                    <a href="mailto:contact@jasminelite.com" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
+                    <a href="mailto:contact@jasmineliteconcierge.com" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
                       <Mail className="w-5 h-5 text-accent" />
-                      <span>contact@jasminelite.com</span>
+                      <span>contact@jasmineliteconcierge.com</span>
                     </a>
                     <a href="tel:+213555123456" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
                       <Phone className="w-5 h-5 text-accent" />

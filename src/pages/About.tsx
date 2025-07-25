@@ -46,42 +46,45 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Heart className="w-8 h-8 text-accent" />
-                  <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
-                    Notre histoire
-                  </h2>
-                </div>
-                <p className="text-lg text-foreground/80 leading-relaxed">
-                  JasminElite Conciergerie est née d'une vision simple : offrir aux propriétaires 
-                  algériens une solution complète et professionnelle pour optimiser leurs revenus 
-                  locatifs tout en préservant leur tranquillité d'esprit.
-                </p>
+                  
+                <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
+                  Notre histoire
+                </h2>
               </div>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Algérie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local.
+              </p>
 
               <div className="space-y-6">
                 <p className="text-foreground/70 leading-relaxed">
-                  Fondée par une équipe d'experts passionnés par l'hospitalité et la technologie, 
-                  notre entreprise s'est rapidement imposée comme la référence en matière de 
-                  conciergerie haut de gamme en Algérie. Nous comprenons les spécificités du 
-                  marché local et les attentes des voyageurs internationaux.
+                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché algérien et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
                 </p>
                 
                 <p className="text-foreground/70 leading-relaxed">
-                  Chaque jour, nous mettons notre expertise au service de propriétaires qui nous 
-                  font confiance pour transformer leurs biens immobiliers en sources de revenus 
-                  optimisées, sans contrainte ni stress de gestion.
+                  Spécialisés dans la gestion premium de propriétés, nous maîtrisons tous les aspects du secteur : du revenue management aux dernières technologies de l'hospitalité, en passant par les réglementations locales et les tendances du marché international.
+                </p>
+
+                <p className="text-foreground/70 leading-relaxed">
+                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires algériens, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
                 </p>
               </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-4 bg-beige-soft rounded-xl">
-                  <div className="text-2xl font-alice font-bold text-accent mb-1">200+</div>
-                  <div className="text-sm text-foreground/70">Propriétés gérées</div>
-                </div>
-                <div className="text-center p-4 bg-beige-soft rounded-xl">
-                  <div className="text-2xl font-alice font-bold text-accent mb-1">98%</div>
-                  <div className="text-sm text-foreground/70">Satisfaction client</div>
-                </div>
               </div>
+
+
+              <div className="grid grid-cols-3 gap-4">
+  <div className="text-center p-4 bg-beige-soft rounded-xl">
+    <div className="text-2xl font-alice font-bold text-accent mb-1">24/7</div>
+    <div className="text-sm text-foreground/70">Support client</div>
+  </div>
+  <div className="text-center p-4 bg-beige-soft rounded-xl">
+    <div className="text-2xl font-alice font-bold text-accent mb-1">20%</div>
+    <div className="text-sm text-foreground/70">Commission unique</div>
+  </div>
+  <div className="text-center p-4 bg-beige-soft rounded-xl">
+    <div className="text-2xl font-alice font-bold text-accent mb-1">0%</div>
+    <div className="text-sm text-foreground/70">Frais cachés</div>
+  </div>
+</div>
             </div>
 
             <div className="lg:order-2">
@@ -201,9 +204,7 @@ const About = () => {
                   Prêt à nous faire confiance ?
                 </h2>
                 <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-                  Rejoignez les centaines de propriétaires qui ont déjà choisi JasminElite 
-                  pour optimiser leurs revenus locatifs en toute sérénité. 
-                  Parlons de votre projet !
+                  Rejoignez les propriétaires visionnaires qui ont choisi l'excellence. Découvrons ensemble le potentiel de vos biens.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                   <Link to="/contact" className="w-full sm:w-auto">

@@ -181,7 +181,10 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
                           <SelectItem value="studio">Studio</SelectItem>
                           <SelectItem value="1-chambre">1 chambre</SelectItem>
                           <SelectItem value="2-chambres">2 chambres</SelectItem>
+                          <SelectItem value="3-chambres">3 chambres</SelectItem>
+                          <SelectItem value="4-chambres">4+ chambres</SelectItem>
                           <SelectItem value="villa">Villa</SelectItem>
+                          <SelectItem value="Immeuble">Immeuble</SelectItem>
                           <SelectItem value="autre">Autre</SelectItem>
                         </SelectContent>
                       </Select>
