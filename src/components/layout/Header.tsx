@@ -2,18 +2,23 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoImage from "@/assets/logo-jasminelite.png";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import logoImage from "/lovable-uploads/ea6e764a-6e4a-43d5-a7a4-8ba7f24f1d78.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
 
   const navigationItems = [
-    { name: "Accueil", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "À propos", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.services, href: "/services" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.blog, href: "/blog" },
+    { name: t.nav.contact, href: "/contact" },
   ];
 
   const isActiveLink = (href: string) => {
@@ -25,7 +30,7 @@ const Header = () => {
   return (
     <header className="top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="container-custom">
-        <div className="flex items-center justify-between">
+        <div className={`flex items-center justify-between ${isRTL ? 'flex-row-reverse' : ''}`}>
           {/* Logo */}
           <Link to="/" className="flex items-center transition-transform hover:scale-105">
             <img 
@@ -36,7 +41,7 @@ const Header = () => {
           </Link>
 
           {/* Navigation Desktop */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className={`hidden lg:flex items-center ${isRTL ? 'space-x-reverse space-x-8' : 'space-x-8'}`}>
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -55,15 +60,16 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Phone Number */}
-          <div className="hidden md:flex items-center">
+          {/* Phone Number & Language Switcher */}
+          <div className={`hidden md:flex items-center ${isRTL ? 'space-x-reverse space-x-4' : 'space-x-4'}`}>
             <a 
               href="tel:+213555123456" 
-              className="flex items-center space-x-2 text-accent hover:text-golden-hover transition-colors"
+              className={`flex items-center text-accent hover:text-golden-hover transition-colors ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">+213 555 123 456</span>
+              <span className="font-medium">{t.footer.phone}</span>
             </a>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,14 +101,15 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <div className="px-4 pt-4 border-t border-border">
+              <div className="px-4 pt-4 border-t border-border space-y-4">
                 <a 
                   href="tel:+213555123456" 
-                  className="flex items-center space-x-2 text-accent hover:text-golden-hover transition-colors"
+                  className={`flex items-center text-accent hover:text-golden-hover transition-colors ${isRTL ? 'space-x-reverse space-x-2' : 'space-x-2'}`}
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="font-medium">+213 555 123 456</span>
+                  <span className="font-medium">{t.footer.phone}</span>
                 </a>
+                <LanguageSwitcher />
               </div>
             </nav>
           </div>
