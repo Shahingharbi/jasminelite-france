@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Camera, Calendar, Users, Home, Zap, Shield, Brush } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-services.jpg";
 import serviceListingImage from "@/assets/service-listing.jpg";
 import servicePhotoImage from "@/assets/service-photo.jpg";
@@ -9,6 +11,9 @@ import serviceCommunicationImage from "@/assets/service-communication.jpg";
 import serviceMaintenanceImage from "@/assets/service-maintenance.jpg";
 
 const Services = () => {
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
+
   return (
     <Layout>
       {/* Hero Section */}
@@ -21,18 +26,17 @@ const Services = () => {
         </div>
         
         <div className="relative container-custom">
-          <div className="max-w-3xl">
+          <div className={`max-w-3xl ${isRTL ? 'text-right' : ''}`}>
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-white leading-tight">
-                Nos services de conciergerie haut de gamme
+                {t.services.hero.title}
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Une gamme complète de services pour maximiser vos revenus locatifs 
-                et vous offrir une tranquillité d'esprit totale.
+                {t.services.hero.subtitle}
               </p>
               <Link to="/contact" className="inline-block w-full sm:w-auto">
                 <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
-                  Demander un devis 
+                  {t.services.hero.button}
                 </Button>
               </Link>
             </div>

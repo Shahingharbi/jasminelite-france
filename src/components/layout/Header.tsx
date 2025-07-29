@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
-import logoImage from "/lovable-uploads/ea6e764a-6e4a-43d5-a7a4-8ba7f24f1d78.png";
+const logoImage = "/lovable-uploads/ea6e764a-6e4a-43d5-a7a4-8ba7f24f1d78.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

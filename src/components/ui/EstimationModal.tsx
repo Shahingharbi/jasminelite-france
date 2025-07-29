@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import estimationImage from "@/assets/estimation-modal.jpg";
 
 // CONFIGURATION EMAILJS
@@ -24,6 +26,9 @@ interface EstimationModalProps {
 
 export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
   const { toast } = useToast();
+  const { t } = useTranslation();
+  const { isRTL } = useLanguage();
+  
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -65,7 +70,7 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
 
       if (response.status === 200) {
         toast({
-          title: "Demande envoyée !",
+          title: t.common.success,
           description: "Nous vous recontacterons rapidement pour votre estimation.",
         });
 
@@ -84,15 +89,15 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
         onClose(); // Fermer le modal
       } else {
         toast({
-          title: "Erreur",
-          description: "Impossible d’envoyer votre estimation.",
+          title: t.common.error,
+          description: "Impossible d'envoyer votre estimation.",
           variant: "destructive",
         });
       }
     } catch (error) {
       console.error("Erreur EmailJS :", error);
       toast({
-        title: "Erreur technique",
+        title: t.common.error,
         description: "Une erreur est survenue. Veuillez réessayer.",
         variant: "destructive",
       });
@@ -104,9 +109,9 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto [&>button]:hidden">
-        <div className="grid lg:grid-cols-2 gap-0 -m-6">
+        <div className={`grid lg:grid-cols-2 gap-0 -m-6 ${isRTL ? 'lg:grid-cols-2' : ''}`}>
           {/* Image Section */}
-          <div className="relative">
+          <div className={`relative ${isRTL ? 'lg:order-2' : ''}`}>
             <img 
               src={estimationImage} 
               alt="Estimation immobilière"
@@ -116,11 +121,11 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
           </div>
 
           {/* Form Section */}
-          <div className="p-8 bg-muted">
-            <div className="flex items-center justify-between mb-6">
+          <div className={`p-8 bg-background ${isRTL ? 'lg:order-1 text-right' : ''}`}>
+            <div className={`flex items-center justify-between mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-alice font-bold text-primary">
-                  Parlons de vous
+                  {t.estimationModal.title}
                 </DialogTitle>
               </DialogHeader>
               <button
@@ -128,7 +133,7 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
                 className="rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
               >
                 <X className="h-4 w-4" />
-                <span className="sr-only">Fermer</span>
+                <span className="sr-only">{t.estimationModal.closeButton}</span>
               </button>
             </div>
 
@@ -137,72 +142,109 @@ export const EstimationModal = ({ isOpen, onClose }: EstimationModalProps) => {
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="firstName">Prénom</Label>
-                    <Input id="firstName" className="bg-white" value={formData.firstName} onChange={(e) => handleInputChange('firstName', e.target.value)} />
+                    <Label htmlFor="firstName">{t.estimationModal.fields.firstName}</Label>
+                    <Input 
+                      id="firstName" 
+                      className="bg-background" 
+                      value={formData.firstName} 
+                      onChange={(e) => handleInputChange('firstName', e.target.value)} 
+                    />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Nom</Label>
-                    <Input id="lastName" className="bg-white" value={formData.lastName} onChange={(e) => handleInputChange('lastName', e.target.value)} />
+                    <Label htmlFor="lastName">{t.estimationModal.fields.lastName}</Label>
+                    <Input 
+                      id="lastName" 
+                      className="bg-background" 
+                      value={formData.lastName} 
+                      onChange={(e) => handleInputChange('lastName', e.target.value)} 
+                    />
                   </div>
                 </div>
                 <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" className="bg-white" value={formData.email} onChange={(e) => handleInputChange('email', e.target.value)} />
+                  <Label htmlFor="email">{t.estimationModal.fields.email}</Label>
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    className="bg-background" 
+                    value={formData.email} 
+                    onChange={(e) => handleInputChange('email', e.target.value)} 
+                  />
                 </div>
                 <div>
-                  <Label htmlFor="phone">Téléphone</Label>
-                  <Input id="phone" className="bg-white" value={formData.phone} onChange={(e) => handleInputChange('phone', e.target.value)} placeholder="Ex : 07 01 23 45 67" />
+                  <Label htmlFor="phone">{t.estimationModal.fields.phone}</Label>
+                  <Input 
+                    id="phone" 
+                    className="bg-background" 
+                    value={formData.phone} 
+                    onChange={(e) => handleInputChange('phone', e.target.value)} 
+                    placeholder={t.estimationModal.fields.phonePlaceholder} 
+                  />
                 </div>
               </div>
 
               {/* Infos sur le bien */}
               <div className="border-t border-border pt-6">
-                <h3 className="text-lg font-alice font-semibold text-primary mb-4 flex items-center">
-                  <Home className="w-5 h-5 mr-2 text-accent" />
-                  Parlons de votre bien
+                <h3 className={`text-lg font-alice font-semibold text-primary mb-4 flex items-center ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <Home className={`w-5 h-5 text-accent ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                  {t.estimationModal.aboutProperty}
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="address">Adresse</Label>
-                    <Input id="address" className="bg-white" value={formData.address} onChange={(e) => handleInputChange('address', e.target.value)} />
+                    <Label htmlFor="address">{t.estimationModal.fields.address}</Label>
+                    <Input 
+                      id="address" 
+                      className="bg-background" 
+                      value={formData.address} 
+                      onChange={(e) => handleInputChange('address', e.target.value)} 
+                    />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="surface">Superficie (m²)</Label>
-                      <Input id="surface" className="bg-white" type="number" value={formData.surface} onChange={(e) => handleInputChange('surface', e.target.value)} placeholder="Ex : 75" />
+                      <Label htmlFor="surface">{t.estimationModal.fields.area}</Label>
+                      <Input 
+                        id="surface" 
+                        className="bg-background" 
+                        type="number" 
+                        value={formData.surface} 
+                        onChange={(e) => handleInputChange('surface', e.target.value)} 
+                        placeholder={t.estimationModal.fields.areaPlaceholder} 
+                      />
                     </div>
                     <div>
-                      <Label htmlFor="typologie" >Typologie</Label>
+                      <Label htmlFor="typologie">{t.estimationModal.fields.type}</Label>
                       <Select onValueChange={(value) => handleInputChange('typologie', value)}>
-                        <SelectTrigger className="bg-white">
+                        <SelectTrigger className="bg-background">
                           <SelectValue placeholder="Choisir..." />
                         </SelectTrigger>
-                        <SelectContent className="bg-white">
-                          <SelectItem value="studio">Studio</SelectItem>
-                          <SelectItem value="1-chambre">1 chambre</SelectItem>
-                          <SelectItem value="2-chambres">2 chambres</SelectItem>
-                          <SelectItem value="3-chambres">3 chambres</SelectItem>
-                          <SelectItem value="4-chambres">4+ chambres</SelectItem>
-                          <SelectItem value="villa">Villa</SelectItem>
-                          <SelectItem value="Immeuble">Immeuble</SelectItem>
-                          <SelectItem value="autre">Autre</SelectItem>
+                        <SelectContent className="bg-background">
+                          {t.estimationModal.fields.typeOptions.map((option, index) => (
+                            <SelectItem key={index} value={option.toLowerCase()}>
+                              {option}
+                            </SelectItem>
+                          ))}
                         </SelectContent>
                       </Select>
                     </div>
                   </div>
                   <div>
-                    <Label htmlFor="description">Description (optionnel)</Label>
-                    <Textarea id="description" className="bg-white" value={formData.description} onChange={(e) => handleInputChange('description', e.target.value)} placeholder="Décrivez votre bien..." />
+                    <Label htmlFor="description">{t.estimationModal.fields.description}</Label>
+                    <Textarea 
+                      id="description" 
+                      className="bg-background" 
+                      value={formData.description} 
+                      onChange={(e) => handleInputChange('description', e.target.value)} 
+                      placeholder={t.estimationModal.fields.descriptionPlaceholder} 
+                    />
                   </div>
                 </div>
               </div>
 
               <div className="text-sm text-foreground/60 italic">
-                Tous les champs ne sont pas obligatoires :)
+                {t.estimationModal.note}
               </div>
 
               <Button type="submit" className="btn-golden w-full text-lg py-3" disabled={isSubmitting}>
-                {isSubmitting ? "Envoi en cours..." : "Recevoir mon estimation"}
+                {isSubmitting ? t.common.loading : t.estimationModal.submitButton}
               </Button>
             </form>
           </div>

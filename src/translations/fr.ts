@@ -59,6 +59,11 @@ export const fr = {
   services: {
     title: "Nos services",
     subtitle: "Une gamme complète de services pour optimiser votre location saisonnière",
+    hero: {
+      title: "Nos services de conciergerie haut de gamme",
+      subtitle: "Une gamme complète de services pour maximiser vos revenus locatifs et vous offrir une tranquillité d'esprit totale.",
+      button: "Demander un devis"
+    },
     items: [
       {
         title: "Création d'annonce",
@@ -193,6 +198,55 @@ export const fr = {
       title: "Restez informé",
       subtitle: "Recevez nos derniers conseils et actualités directement dans votre boîte mail",
       button: "Nous contacter"
+    }
+  },
+
+  // About
+  about: {
+    hero: {
+      title: "Votre partenaire de confiance pour la conciergerie haut de gamme",
+      subtitle: "Depuis notre création, nous révolutionnons la gestion locative en Algérie en alliant expertise locale, technologie moderne et service d'exception pour maximiser vos revenus en toute sérénité.",
+      button: "Rencontrons-nous"
+    },
+    story: {
+      title: "Notre histoire",
+      intro: "JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Algérie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local.",
+      approach: "Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché algérien et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.",
+      expertise: "Spécialisés dans la gestion premium de propriétés, nous maîtrisons tous les aspects du secteur : du revenue management aux dernières technologies de l'hospitalité, en passant par les réglementations locales et les tendances du marché international.",
+      mission: "Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires algériens, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables."
+    },
+    stats: {
+      support: "Support client",
+      commission: "Commission unique",
+      fees: "Frais cachés"
+    },
+    vision: {
+      title: "Notre vision & nos valeurs",
+      excellenceTitle: "Excellence & Innovation",
+      excellenceSubtitle: "Notre engagement pour un service d'exception"
+    },
+    values: {
+      excellence: {
+        title: "Excellence",
+        description: "Nous visons l'excellence dans chaque interaction, chaque service rendu, et chaque détail de la gestion de vos propriétés. Notre standard de qualité est sans compromis."
+      },
+      trust: {
+        title: "Confiance",
+        description: "La confiance est au cœur de notre relation avec nos clients. Transparence, intégrité et communication constante sont les piliers de notre approche."
+      },
+      innovation: {
+        title: "Innovation",
+        description: "Nous intégrons constamment les dernières technologies et les meilleures pratiques pour optimiser la rentabilité et simplifier la gestion."
+      },
+      proximity: {
+        title: "Proximité",
+        description: "Notre connaissance approfondie du marché algérien et notre présence locale nous permettent d'offrir un service personnalisé et adapté à vos besoins."
+      }
+    },
+    servicesButton: "Découvrir nos services",
+    cta: {
+      title: "Prêt à nous faire confiance ?",
+      subtitle: "Rejoignez les propriétaires visionnaires qui ont choisi l'excellence. Découvrons ensemble le potentiel de vos biens."
     }
   },
 
