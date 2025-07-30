@@ -4,6 +4,8 @@ import { Star, Users, Shield, Sparkles, Camera, Calendar, Zap, Home, Brush, Shir
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { EstimationModal } from "@/components/ui/EstimationModal";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-home.jpg";
 import stepAuditImage from "@/assets/step-audit.jpg";
 import stepListingImage from "@/assets/step-listing.jpg";
@@ -11,59 +13,54 @@ import stepManagementImage from "@/assets/step-management.jpg";
 
 const Index = () => {
   const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
-  
-  const scrollingItems = [
-    "Toute l'Algérie",
-    "Revenus complémentaires", 
-    "Taux d'occupation élevé",
-    "Zéro tracas, 100% sérénité"
-  ];
+  const t = useTranslation();
+  const { isRTL } = useLanguage();
 
   const services = [
     {
       icon: Home,
-      title: "Création d'annonce",
-      description: "Rédigeons et optimisons vos annonces pour maximiser votre visibilité"
+      title: t.services.list[0].title,
+      description: t.services.list[0].description
     },
     {
       icon: Camera,
-      title: "Photographie professionnelle",
-      description: "Photos haute qualité qui mettent en valeur votre propriété"
+      title: t.services.list[1].title,
+      description: t.services.list[1].description
     },
     {
       icon: Zap,
-      title: "Optimisation tarifaire",
-      description: "Pricing dynamique pour optimiser vos revenus locatifs"
+      title: t.services.list[2].title,
+      description: t.services.list[2].description
     },
     {
       icon: Calendar,
-      title: "Gestion de calendrier",
-      description: "Synchronisation multi-plateformes et gestion des disponibilités"
+      title: t.services.list[3].title,
+      description: t.services.list[3].description
     },
     {
       icon: Users,
-      title: "Suivi des voyageurs",
-      description: "Communication professionnelle et assistance 24/7"
+      title: t.services.list[4].title,
+      description: t.services.list[4].description
     },
     {
       icon: Shield,
-      title: "Check-in/out",
-      description: "Accueil personnalisé et remise des clés sécurisée"
+      title: t.services.list[5].title,
+      description: t.services.list[5].description
     },
     {
       icon: Brush,
-      title: "Nettoyage",
-      description: "Service de ménage professionnel après chaque séjour"
+      title: t.services.list[6].title,
+      description: t.services.list[6].description
     },
     {
       icon: Shirt,
-      title: "Blanchisserie",
-      description: "Nettoyage et repassage du linge de maison"
+      title: t.services.list[7].title,
+      description: t.services.list[7].description
     },
     {
       icon: Sparkles,
-      title: "Maintenance",
-      description: "Entretien préventif et réparations d'urgence"
+      title: t.services.list[8].title,
+      description: t.services.list[8].description
     }
   ];
 
@@ -101,28 +98,26 @@ const Index = () => {
         
         <div className="relative container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className={`space-y-8 ${isRTL ? 'text-right' : 'text-left'}`}>
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-primary leading-tight">
-                  Votre conciergerie haut de gamme en Algérie
+                <h1 className={`text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-primary leading-tight ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {t.hero.title}
                 </h1>
-                <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  Maximisez vos revenus locatifs avec notre service d'excellence. 
-                  Nous gérons tout, de A à Z, pour que vous puissiez profiter 
-                  de vos investissements en toute sérénité.
+                <p className={`text-lg md:text-xl text-foreground/80 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
+                  {t.hero.subtitle}
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <div className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
                 <Button 
                   onClick={() => setIsEstimationModalOpen(true)}
                   className="btn-golden text-lg px-8 py-4 w-full sm:w-auto"
                 >
-                  Estimez vos revenus
+                  {t.hero.estimateButton}
                 </Button>
                 <Link to="/services" className="w-full sm:w-auto">
                   <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full sm:w-auto">
-                    Découvrez nos services
+                    {t.hero.servicesButton}
                   </Button>
                 </Link>
               </div>
@@ -134,12 +129,12 @@ const Index = () => {
       {/* Scrolling Banner */}
       <section className="bg-card py-6 border-y border-border">
         <div className="overflow-hidden">
-          <div className="flex animate-marquee">
+          <div className={`flex animate-marquee ${isRTL ? 'animate-marquee-rtl' : ''}`}>
             {[...Array(3)].map((_, setIndex) => (
               <div key={setIndex} className="flex shrink-0">
-                {scrollingItems.map((item, index) => (
-                  <div key={`${setIndex}-${index}`} className="flex items-center mx-8">
-                    <Star className="w-5 h-5 text-accent mr-3" />
+                {t.banner.items.map((item, index) => (
+                  <div key={`${setIndex}-${index}`} className={`flex items-center mx-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                    <Star className={`w-5 h-5 text-accent ${isRTL ? 'ml-3' : 'mr-3'}`} />
                     <span className="text-lg font-medium whitespace-nowrap">{item}</span>
                   </div>
                 ))}
@@ -152,48 +147,40 @@ const Index = () => {
       {/* How it Works */}
       <section className="section-spacing">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 ${isRTL ? 'text-right' : 'text-left'} md:text-center`}>
             <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary mb-4">
-              Comment ça marche ?
+              {t.howItWorks.title}
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Un processus simple et efficace pour optimiser vos revenus locatifs
+              {t.howItWorks.subtitle}
             </p>
           </div>
 
           <div className="space-y-24">
             {/* Step 1 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
+            <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div className={`space-y-6 ${isRTL ? 'lg:order-2 text-right' : 'text-left'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4 flex-row-reverse' : 'space-x-4'}`}>
                   <div className="w-12 h-12 bg-gradient-golden rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    1
+                    {t.howItWorks.step1.number}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-alice font-bold text-primary">
-                    Audit gratuit de votre bien
+                    {t.howItWorks.step1.title}
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Nous analysons votre propriété, le marché local et définissons ensemble 
-                  la stratégie optimale pour maximiser vos revenus. Notre expertise du 
-                  marché algérien nous permet de vous proposer les meilleures solutions.
+                  {t.howItWorks.step1.description}
                 </p>
                 <ul className="space-y-2 text-foreground/70">
-                  <li className="flex items-center space-x-2">
-                    <Star className="w-4 h-4 text-accent" />
-                    <span>Évaluation du potentiel locatif</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <Star className="w-4 h-4 text-accent" />
-                    <span>Analyse de la concurrence</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <Star className="w-4 h-4 text-accent" />
-                    <span>Recommandations d'amélioration</span>
-                  </li>
+                  {t.howItWorks.step1.points.map((point, index) => (
+                    <li key={index} className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2 flex-row-reverse' : 'space-x-2'}`}>
+                      <Star className="w-4 h-4 text-accent" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
-              <div className="lg:order-2">
+              <div className={`${isRTL ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
                     src={stepAuditImage}
@@ -207,37 +194,33 @@ const Index = () => {
             </div>
 
             {/* Step 2 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="lg:order-2 space-y-6">
-                <div className="flex items-center space-x-4">
+            <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div className={`space-y-6 ${isRTL ? 'lg:order-1 text-right' : 'lg:order-2 text-left'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4 flex-row-reverse' : 'space-x-4'}`}>
                   <div className="w-12 h-12 bg-gradient-golden rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    2
+                    {t.howItWorks.step2.number}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-alice font-bold text-primary">
-                    Mise en ligne optimisée
+                    {t.howItWorks.step2.title}
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Nous créons des annonces attractives avec des photos professionnelles 
-                  et un descriptif optimisé. Votre bien est mis en ligne sur toutes les 
-                  plateformes principales pour maximiser la visibilité.
+                  {t.howItWorks.step2.description}
                 </p>
                 <ul className="space-y-2 text-foreground/70">
-                  <li className="flex items-center space-x-2">
-                    <Camera className="w-4 h-4 text-accent" />
-                    <span>Séance photo professionnelle</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <Calendar className="w-4 h-4 text-accent" />
-                    <span>Gestion multi-plateformes</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <Zap className="w-4 h-4 text-accent" />
-                    <span>Optimisation SEO des annonces</span>
-                  </li>
+                  {t.howItWorks.step2.points.map((point, index) => {
+                    const icons = [Camera, Calendar, Zap];
+                    const IconComponent = icons[index];
+                    return (
+                      <li key={index} className={`flex items-center ${isRTL ? 'space-x-reverse space-x-2 flex-row-reverse' : 'space-x-2'}`}>
+                        <IconComponent className="w-4 h-4 text-accent" />
+                        <span>{point}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
-              <div className="lg:order-1">
+              <div className={`${isRTL ? 'lg:order-2' : 'lg:order-1'}`}>
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
                     src={stepListingImage} 
@@ -251,28 +234,26 @@ const Index = () => {
             </div>
 
             {/* Step 3 */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
+            <div className={`grid lg:grid-cols-2 gap-12 items-center ${isRTL ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div className={`space-y-6 ${isRTL ? 'lg:order-2 text-right' : 'text-left'}`}>
+                <div className={`flex items-center ${isRTL ? 'space-x-reverse space-x-4 flex-row-reverse' : 'space-x-4'}`}>
                   <div className="w-12 h-12 bg-gradient-golden rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    3
+                    {t.howItWorks.step3.number}
                   </div>
                   <h3 className="text-2xl md:text-3xl font-alice font-bold text-primary">
-                    Gestion complète et sérénité
+                    {t.howItWorks.step3.title}
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Relaxez-vous ! Nous nous occupons de tout : accueil des voyageurs, 
-                  nettoyage, maintenance, communication. Vous recevez vos revenus 
-                  directement, sans aucun tracas.
+                  {t.howItWorks.step3.description}
                 </p>
-                <Link to="/contact" className="inline-block w-full sm:w-auto">
+                <Link to="/contact" className={`inline-block w-full sm:w-auto ${isRTL ? 'text-right' : 'text-left'}`}>
                   <Button className="btn-golden text-lg px-8 py-4 mt-6 w-full max-w-xs mx-auto sm:w-auto">
-                    Commencer maintenant
+                    {t.howItWorks.step3.button}
                   </Button>
                 </Link>
               </div>
-              <div className="lg:order-2">
+              <div className={`${isRTL ? 'lg:order-1' : 'lg:order-2'}`}>
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
                   <img 
                     src={stepManagementImage}
@@ -291,22 +272,22 @@ const Index = () => {
       {/* Services Section */}
       <section className="section-spacing bg-beige-soft">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center space-x-3 mb-4">
+          <div className={`text-center mb-16 ${isRTL ? 'text-right' : 'text-left'} md:text-center`}>
+            <div className={`flex items-center justify-center mb-4 ${isRTL ? 'space-x-reverse space-x-3 flex-row-reverse' : 'space-x-3'}`}>
               <Sparkles className="w-8 h-8 text-accent" />
               <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
-                Nos services
+                {t.services.title}
               </h2>
             </div>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Une gamme complète de services pour optimiser votre location saisonnière
+              {t.services.subtitle}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {services.map((service, index) => (
               <div key={index} className="card-elegant group hover:transform hover:scale-105">
-                <div className="flex items-center space-x-4 mb-4">
+                <div className={`flex items-center mb-4 ${isRTL ? 'space-x-reverse space-x-4 flex-row-reverse text-right' : 'space-x-4 text-left'}`}>
                   <div className="w-12 h-12 bg-gradient-golden rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
@@ -314,7 +295,7 @@ const Index = () => {
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-foreground/70 leading-relaxed">
+                <p className={`text-foreground/70 leading-relaxed ${isRTL ? 'text-right' : 'text-left'}`}>
                   {service.description}
                 </p>
               </div>
@@ -324,7 +305,7 @@ const Index = () => {
           <div className="text-center">
             <Link to="/services" className="inline-block w-full sm:w-auto">
               <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full max-w-xs mx-auto sm:w-auto">
-                Découvrez tous nos services
+                {t.services.button}
               </Button>
             </Link>
           </div>
