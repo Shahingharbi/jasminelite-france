@@ -117,14 +117,14 @@ const BlogArticle1 = () => {
                 <div className="space-y-6">
                   <h2 className="text-3xl font-alice font-bold text-primary">3. L'optimisation juridique et fiscale</h2>
                   <p>
-                    En Algérie, la location saisonnière est soumise à des réglementations spécifiques. Il est essentiel de s'informer sur vos obligations légales et fiscales pour éviter tout problème. Assurez-vous d'avoir une assurance adaptée qui couvre la location courte durée.
+                    En Haute Savoie, la location saisonnière est soumise à des réglementations spécifiques. Il est essentiel de s'informer sur vos obligations légales et fiscales pour éviter tout problème. Assurez-vous d'avoir une assurance adaptée qui couvre la location courte durée.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <h2 className="text-3xl font-alice font-bold text-primary">4. La fixation du prix optimal</h2>
                   <p>
-                    Le pricing est un art qui nécessite une connaissance approfondie du marché local. Trop cher, et vous n'aurez pas de réservations. Trop bon marché, et vous perdez de l'argent. Notre équipe analyse en permanence le marché algérien pour vous proposer des tarifs optimisés selon la saisonnalité et les événements locaux.
+                    Le pricing est un art qui nécessite une connaissance approfondie du marché local. Trop cher, et vous n'aurez pas de réservations. Trop bon marché, et vous perdez de l'argent. Notre équipe analyse en permanence le marché Haute Savoien pour vous proposer des tarifs optimisés selon la saisonnalité et les événements locaux.
                   </p>
                 </div>
 

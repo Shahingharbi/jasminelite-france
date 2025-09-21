@@ -129,7 +129,7 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-foreground/70 mb-6">Votre conciergerie haut de gamme en Algérie</p>
+                    <p className="text-foreground/70 mb-6">Votre conciergerie haut de gamme en Haute Savoie</p>
                   </div>
                   
                   <div className="space-y-4">
@@ -137,13 +137,13 @@ const Contact = () => {
                       <Mail className="w-5 h-5 text-accent" />
                       <span>contact@jasmineliteconcierge.com</span>
                     </a>
-                    <a href="tel:+213555123456" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
+                    <a href="tel:06 63 06 79 09" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
                       <Phone className="w-5 h-5 text-accent" />
-                      <span>+213 555 123 456</span>
+                      <span>06 63 06 79 09</span>
                     </a>
                     <div className="flex items-center space-x-3 text-foreground/80">
                       <MapPin className="w-5 h-5 text-accent" />
-                      <span>Alger, Algérie</span>
+                      <span>Annemasse, Haute Savoie</span>
                     </div>
                   </div>
                 </div>

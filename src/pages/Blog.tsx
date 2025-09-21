@@ -49,7 +49,7 @@ const Blog = () => {
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
                 Retrouvez tous nos conseils d'experts pour optimiser votre location saisonnière 
-                et maximiser vos revenus en Algérie.
+                et maximiser vos revenus en Haute Savoie.
               </p>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Blog = () => {
                 </h2>
                 <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
                   Recevez régulièrement nos conseils d'experts pour optimiser vos revenus locatifs 
-                  et rester au fait des dernières tendances du marché algérien.
+                  et rester au fait des dernières tendances du marché Haute Savoien.
                 </p>
                 <Link to="/contact" className="inline-block w-full sm:w-auto">
                   <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">

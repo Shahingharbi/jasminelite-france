@@ -59,7 +59,7 @@ const Services = () => {
                 <p className="text-lg text-foreground/80 leading-relaxed mb-6">
                   Nous créons des annonces attractives et optimisées pour maximiser votre visibilité 
                   sur toutes les plateformes de location saisonnière. Notre expertise du marché 
-                  algérien nous permet de cibler les bons mots-clés et d'attirer les voyageurs idéaux.
+                  en Haute Savoie nous permet de cibler les bons mots-clés et d'attirer les voyageurs idéaux.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">

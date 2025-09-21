@@ -13,7 +13,7 @@ const Index = () => {
   const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
   
   const scrollingItems = [
-    "Toute l'Algérie",
+    "Toute l'Haute Savoie",
     "Revenus complémentaires", 
     "Taux d'occupation élevé",
     "Zéro tracas, 100% sérénité"
@@ -70,7 +70,7 @@ const Index = () => {
   const testimonials = [
     {
       name: "Amina B.",
-      location: "Alger",
+      location: "Annemasse",
       text: "Grâce à JasminElite, mes revenus locatifs ont augmenté de 40% ! Leur service est impeccable et je n'ai plus aucun souci de gestion.",
       rating: 5
     },
@@ -83,7 +83,7 @@ const Index = () => {
     {
       name: "Sarah L.",
       location: "Constantine",
-      text: "Enfin une conciergerie qui comprend le marché algérien ! Service haut de gamme et tarifs transparents. Parfait pour mes appartements.",
+      text: "Enfin une conciergerie qui comprend le marché Haute Savoien ! Service haut de gamme et tarifs transparents. Parfait pour mes appartements.",
       rating: 5
     }
   ];
@@ -104,7 +104,7 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-primary leading-tight">
-                  Votre conciergerie haut de gamme en Algérie
+                  Votre conciergerie haut de gamme en Haute Savoie
                 </h1>
                 <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                   Maximisez vos revenus locatifs avec notre service d'excellence. 
@@ -176,7 +176,7 @@ const Index = () => {
                 <p className="text-lg text-foreground/80 leading-relaxed">
                   Nous analysons votre propriété, le marché local et définissons ensemble 
                   la stratégie optimale pour maximiser vos revenus. Notre expertise du 
-                  marché algérien nous permet de vous proposer les meilleures solutions.
+                  marché en Haute Savoie nous permet de vous proposer les meilleures solutions.
                 </p>
                 <ul className="space-y-2 text-foreground/70">
                   <li className="flex items-center space-x-2">

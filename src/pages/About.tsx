@@ -24,7 +24,7 @@ const About = () => {
                 Votre partenaire de confiance pour la conciergerie haut de gamme
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Depuis notre création, nous révolutionnons la gestion locative en Algérie 
+                Depuis notre création, nous révolutionnons la gestion locative en Haute Savoie 
                 en alliant expertise locale, technologie moderne et service d'exception 
                 pour maximiser vos revenus en toute sérénité.
               </p>
@@ -52,12 +52,12 @@ const About = () => {
                 </h2>
               </div>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Algérie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local.
+                JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Haute Savoie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local.
               </p>
 
               <div className="space-y-6">
                 <p className="text-foreground/70 leading-relaxed">
-                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché algérien et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
+                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché en Haute Savoie et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
                 </p>
                 
                 <p className="text-foreground/70 leading-relaxed">
@@ -65,7 +65,7 @@ const About = () => {
                 </p>
 
                 <p className="text-foreground/70 leading-relaxed">
-                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires algériens, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
+                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires Haute Savoiens, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
                 </p>
               </div>
               </div>
@@ -173,7 +173,7 @@ const About = () => {
                     <span>Proximité</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    Notre connaissance approfondie du marché algérien et notre présence locale 
+                    Notre connaissance approfondie du marché Haute Savoien et notre présence locale 
                     nous permettent d'offrir un service personnalisé et adapté à vos besoins.
                   </p>
                 </div>

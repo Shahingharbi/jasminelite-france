@@ -25,10 +25,10 @@ const BlogArticle2 = () => {
                 </span>
                 <div className="flex items-center space-x-1">
                   <Calendar className="w-4 h-4" />
-                  <span>8 Mars 2024</span>
+                  <span>8 Mars 2025</span>
                 </div>
                 <span>•</span>
-                <span>7 min de lecture</span>
+                <span>3 min de lecture</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-alice font-bold text-primary leading-tight">
@@ -72,7 +72,7 @@ const BlogArticle2 = () => {
             <div className="prose prose-lg max-w-none">
               <div className="space-y-8 text-foreground/80 leading-relaxed">
                 <p className="text-lg">
-                  De plus en plus de propriétaires algériens découvrent les avantages de la location saisonnière. Cependant, gérer soi-même ses locations peut rapidement devenir chronophage et stressant. C'est là qu'une conciergerie haut de gamme comme JasminElite fait toute la différence. Voici pourquoi c'est un investissement intelligent.
+                  De plus en plus de propriétaires Haut-Savoyards découvrent les avantages de la location saisonnière. Cependant, gérer soi-même ses locations peut rapidement devenir chronophage et stressant. C'est là qu'une conciergerie haut de gamme comme JasminElite fait toute la différence. Voici pourquoi c'est un investissement intelligent.
                 </p>
 
                 <div className="space-y-6">
@@ -113,7 +113,7 @@ const BlogArticle2 = () => {
                 <div className="space-y-6">
                   <h2 className="text-3xl font-alice font-bold text-primary">Une expertise locale irremplaçable</h2>
                   <p>
-                    Le marché algérien de la location saisonnière a ses spécificités. Nous connaissons les attentes des voyageurs locaux et internationaux, les périodes de forte demande, les réglementations en vigueur, et les meilleures pratiques pour se démarquer de la concurrence.
+                    Le marché Haute Savoien de la location saisonnière a ses spécificités. Nous connaissons les attentes des voyageurs locaux et internationaux, les périodes de forte demande, les réglementations en vigueur, et les meilleures pratiques pour se démarquer de la concurrence.
                   </p>
                   <p>
                     Cette connaissance approfondie du terrain nous permet d'optimiser votre positionnement, vos tarifs, et votre communication pour maximiser vos réservations.

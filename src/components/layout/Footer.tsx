@@ -15,7 +15,7 @@ const Footer = () => {
               className="h-28 w-auto"
             />
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
-              Votre conciergerie haut de gamme en Algérie. Nous maximisons vos revenus locatifs 
+              Votre conciergerie haut de gamme en Haute Savoie. Nous maximisons vos revenus locatifs 
               avec un service d'excellence et une tranquillité d'esprit totale.
             </p>
           </div>
@@ -47,11 +47,11 @@ const Footer = () => {
             <h3 className="font-alice text-lg font-semibold">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="tel:+213555123456" 
+                href="tel:06 63 06 79 09" 
                 className="flex items-center space-x-2 text-primary-foreground/80 hover:text-accent transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />
-                <span>+213 555 123 456</span>
+                <span>06 63 06 79 09</span>
               </a>
               <a 
                 href="mailto:contact@jasmineliteconcierge.com" 
@@ -62,7 +62,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start space-x-2 text-primary-foreground/80 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>Alger, Algérie</span>
+                <span>Annemasse, Haute Savoie</span>
               </div>
             </div>
           </div>
@@ -72,8 +72,8 @@ const Footer = () => {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/60">
-            <p>&copy; 2024 JasminElite. Tous droits réservés.</p>
-            <p className="mt-2 md:mt-0">Conçu avec passion en Algérie</p>
+            <p>&copy; 2025 JasminElite. Tous droits réservés.</p>
+            <p className="mt-2 md:mt-0">Conçu avec passion en Haute Savoie</p>
           </div>
         </div>
       </div>

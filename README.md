@@ -2,7 +2,7 @@
 
 ## À propos
 
-JasminElite Conciergerie est votre partenaire de confiance pour la gestion haut de gamme de locations saisonnières en Algérie. Nous proposons une gamme complète de services pour maximiser vos revenus locatifs tout en vous offrant une tranquillité d'esprit totale.
+JasminElite Conciergerie est votre partenaire de confiance pour la gestion haut de gamme de locations saisonnières en Haute Savoie. Nous proposons une gamme complète de services pour maximiser vos revenus locatifs tout en vous offrant une tranquillité d'esprit totale.
 
 ## Services
 
@@ -26,8 +26,8 @@ JasminElite Conciergerie est votre partenaire de confiance pour la gestion haut 
 ## Contact
 
 📧 **Email** : contact@jasmineliteconcierge.com  
-📱 **Téléphone** : +213 555 123 456  
-📍 **Adresse** : Alger, Algérie
+📱 **Téléphone** : 06 63 06 79 09  
+📍 **Adresse** : Annemasse, Haute Savoie
 
 ## Technologies
 
