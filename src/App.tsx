@@ -11,6 +11,11 @@ import BlogArticle1 from "./pages/BlogArticle1";
 import BlogArticle2 from "./pages/BlogArticle2";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import MentionsLegales from "./pages/Mentionslegales";
+import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
+import CGV from "./pages/CGV";
+import Cookies from "./pages/cookies";
+import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -27,10 +32,15 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/preparer-bien-location-saisonniere" element={<BlogArticle1 />} />
           <Route path="/blog/pourquoi-conciergerie-haut-gamme" element={<BlogArticle2 />} />
+          <Route path="/Mentionslegales" element={<MentionsLegales />} />
+          <Route path="/Politique-confidentialite" element={<PolitiqueConfidentialite />} />
+          <Route path="/cgv" element={<CGV />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieBanner/>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -25,7 +25,7 @@ const BlogArticle1 = () => {
                 </span>
                 <div className="flex items-center space-x-1">
                   <Calendar className="w-4 h-4" />
-                  <span>15 Mars 2024</span>
+                  <span>15 Mars 2025</span>
                 </div>
                 <span>•</span>
                 <span>5 min de lecture</span>

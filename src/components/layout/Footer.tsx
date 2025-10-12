@@ -39,6 +39,10 @@ const Footer = () => {
               <Link to="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">
                 Contact
               </Link>
+              <Link to="/mentionslegales" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Mentions Légales</Link>
+              <Link to="/politique-confidentialite" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Politique de Confidentialité</Link>
+              <Link to="/cgv" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">CGV</Link>
+              <Link to="/cookies" className="text-primary-foreground/80 hover:text-accent transition-colors text-sm">Cookies</Link>
             </nav>
           </div>
 
@@ -66,7 +70,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Copyright */}

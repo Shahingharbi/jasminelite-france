@@ -57,7 +57,7 @@ const About = () => {
 
               <div className="space-y-6">
                 <p className="text-foreground/70 leading-relaxed">
-                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché en Haute Savoie et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
+                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché Haut-Savoyards et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
                 </p>
                 
                 <p className="text-foreground/70 leading-relaxed">
@@ -65,7 +65,7 @@ const About = () => {
                 </p>
 
                 <p className="text-foreground/70 leading-relaxed">
-                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires Haute Savoiens, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
+                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires en Haute Savoie, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
                 </p>
               </div>
               </div>
@@ -173,7 +173,7 @@ const About = () => {
                     <span>Proximité</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    Notre connaissance approfondie du marché Haute Savoien et notre présence locale 
+                    Notre connaissance approfondie du marché Haut-Savoyards et notre présence locale 
                     nous permettent d'offrir un service personnalisé et adapté à vos besoins.
                   </p>
                 </div>
