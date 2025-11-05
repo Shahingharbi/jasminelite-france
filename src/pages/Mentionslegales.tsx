@@ -19,7 +19,7 @@ const MentionsLegales = () => {
             <strong>SIRET :</strong> 99207108400014
           </p>
           <p className="text-gray-700 mb-2">
-            <strong>Téléphone :</strong> 06 63 06 79 09
+            <strong>Téléphone :</strong> 07 46 28 10 14
           </p>
           <p className="text-gray-700 mb-2">
             <strong>Email :</strong> contact@jasmineliteconcierge.com

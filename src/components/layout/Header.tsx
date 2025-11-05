@@ -58,11 +58,11 @@ const Header = () => {
           {/* Phone Number */}
           <div className="hidden md:flex items-center">
             <a 
-              href="tel:06 63 06 79 09" 
+              href="tel:07 46 28 10 14" 
               className="flex items-center space-x-2 text-accent hover:text-golden-hover transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">06 63 06 79 09</span>
+              <span className="font-medium">07 46 28 10 14</span>
             </a>
           </div>
 
@@ -97,11 +97,11 @@ const Header = () => {
               ))}
               <div className="px-4 pt-4 border-t border-border">
                 <a 
-                  href="tel:06 63 06 79 09" 
+                  href="tel:07 46 28 10 14" 
                   className="flex items-center space-x-2 text-accent hover:text-golden-hover transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="font-medium">06 63 06 79 09</span>
+                  <span className="font-medium">07 46 28 10 14</span>
                 </a>
               </div>
             </nav>

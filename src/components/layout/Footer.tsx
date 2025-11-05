@@ -51,11 +51,11 @@ const Footer = () => {
             <h3 className="font-alice text-lg font-semibold">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="tel:06 63 06 79 09" 
+                href="tel:07 46 28 10 14" 
                 className="flex items-center space-x-2 text-primary-foreground/80 hover:text-accent transition-colors text-sm"
               >
                 <Phone className="w-4 h-4" />
-                <span>06 63 06 79 09</span>
+                <span>07 46 28 10 14</span>
               </a>
               <a 
                 href="mailto:contact@jasmineliteconcierge.com" 

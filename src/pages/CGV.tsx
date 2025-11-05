@@ -168,7 +168,7 @@ const CGV = () => {
             <strong>Contact :</strong><br />
             Yasmina AYARI<br />
             82 Route des Vallées, 74100 Annemasse<br />
-            Tél : 06 63 06 79 09<br />
+            Tél : 07 46 28 10 14<br />
             Email : contact@jasmineliteconcierge.com<br />
             SIRET : 99207108400014
           </p>

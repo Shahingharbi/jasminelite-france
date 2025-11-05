@@ -26,7 +26,7 @@ JasminElite Conciergerie est votre partenaire de confiance pour la gestion haut 
 ## Contact
 
 📧 **Email** : contact@jasmineliteconcierge.com  
-📱 **Téléphone** : 06 63 06 79 09  
+📱 **Téléphone** : 07 46 28 10 14  
 📍 **Adresse** : Annemasse, Haute Savoie
 
 ## Technologies

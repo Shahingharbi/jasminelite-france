@@ -137,9 +137,9 @@ const Contact = () => {
                       <Mail className="w-5 h-5 text-accent" />
                       <span>contact@jasmineliteconcierge.com</span>
                     </a>
-                    <a href="tel:06 63 06 79 09" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
+                    <a href="tel:07 46 28 10 14" className="flex items-center space-x-3 text-foreground/80 hover:text-accent transition-colors">
                       <Phone className="w-5 h-5 text-accent" />
-                      <span>06 63 06 79 09</span>
+                      <span>07 46 28 10 14</span>
                     </a>
                     <div className="flex items-center space-x-3 text-foreground/80">
                       <MapPin className="w-5 h-5 text-accent" />
