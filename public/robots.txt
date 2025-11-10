@@ -1,15 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://jasminelite.com/sitemap.xml
-
-# Pages importantes
-Allow: /
-Allow: /services
-Allow: /about
-Allow: /blog
-Allow: /contact
-
-# Interdire l'indexation des assets
-Disallow: /src/assets/
+Sitemap: https://jasmineliteconcierge.fr/sitemap.xml
