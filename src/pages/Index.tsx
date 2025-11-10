@@ -104,7 +104,7 @@ const Index = () => {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-primary leading-tight">
-                  Votre conciergerie haut de gamme en Haute Savoie
+                  Votre conciergerie de confiance à Annemasse
                 </h1>
                 <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
                   Maximisez vos revenus locatifs avec notre service d'excellence. 
@@ -154,7 +154,7 @@ const Index = () => {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary mb-4">
-              Comment ça marche ?
+              Conciergerie à Annemasse : Comment ça marche ?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Un processus simple et efficace pour optimiser vos revenus locatifs
