@@ -1,27 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JasminElite - Conciergerie Haut de Gamme en Haute Savoie</title>
-    <meta name="description" content="JasminElite, gestion haut de gamme de biens locatifs en Haute Savoie. Tarifs optimisés, services clés en main, tranquillité assurée." />
+
+    <!-- 🔹 Balises principales -->
+    <title>JasminElite - Conciergerie à Annemasse (Haute-Savoie)</title>
+    <meta
+      name="description"
+      content="Conciergerie haut de gamme à Annemasse. JasminElite gère vos locations saisonnières : création d’annonce, ménage, check-in/out, photographie, gestion complète. Commission transparente, tranquillité assurée."
+    />
     <meta name="author" content="JasminElite" />
-    <meta name="keywords" content="conciergerie Haute Savoie, location saisonnière, gestion locative, revenus locatifs, Airbnb Haute Savoie, Annemasse" />
+    <meta
+      name="keywords"
+      content="conciergerie Annemasse, conciergerie Haute-Savoie, location saisonnière Annemasse, gestion locative, Airbnb Annemasse, conciergerie haut de gamme, JasminElite"
+    />
 
-    <meta property="og:title" content="JasminElite - Conciergerie Haut de Gamme en Haute Savoie" />
-    <meta property="og:description" content="JasminElite, gestion haut de gamme de biens locatifs en Haute Savoie. Tarifs optimisés, services clés en main, tranquillité assurée." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jasminelite.com" />
+    <!-- 🔹 Canonical URL -->
+    <link rel="canonical" href="https://jasmineliteconcierge.fr/" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="JasminElite - Conciergerie Haut de Gamme en Haute Savoie" />
-    <meta name="twitter:description" content="JasminElite, gestion haut de gamme de biens locatifs en Haute Savoie." />
-    
-    <link rel="icon" href="/src/assets/logo-jasminelite.png" type="image/png">
+    <!-- 🔹 Favicon -->
+    <link rel="icon" href="/src/assets/logo-jasminelite.png" type="image/png" />
+
+    <!-- 🔹 Données structurées LocalBusiness (pour Google) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JasminElite Conciergerie",
+        "image": "https://ton-domaine.fr/src/assets/logo-jasminelite.png",
+        "url": "https://ton-domaine.fr/",
+        "telephone": "+33 7 46 28 10 14",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Annemasse",
+          "addressLocality": "Annemasse",
+          "addressRegion": "Haute-Savoie",
+          "addressCountry": "FR"
+        },
+        "areaServed": ["Annemasse", "Haute-Savoie", "Genève"],
+        "priceRange": "$$",
+        "description": "Conciergerie à Annemasse : gestion complète de locations saisonnières, ménage, check-in/out, optimisation des revenus."
+      }
+    </script>
+
+    <!-- 🔹 Feuille de style et script principal -->
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- 🔹 Bonus SEO : préchargement de la police ou du logo -->
+    <link rel="preload" as="image" href="/src/assets/logo-jasminelite.png" />
   </head>
 
   <body>
+    <!-- 🔹 Contenu statique visible pour Google (important pour le référencement initial) -->
+    <noscript>
+      <main>
+        <h1>Conciergerie haut de gamme à Annemasse – JasminElite</h1>
+        <p>
+          JasminElite gère vos biens locatifs en Haute-Savoie. Création d’annonces, ménage, check-in/out et optimisation
+          des revenus pour vos locations saisonnières.
+        </p>
+        <ul>
+          <li>Création d’annonce & photographie professionnelle</li>
+          <li>Check-in / check-out & accueil voyageurs</li>
+          <li>Nettoyage et maintenance</li>
+          <li>Optimisation des tarifs et calendrier</li>
+        </ul>
+        <p><a href="/contact">Demandez une estimation gratuite</a></p>
+      </main>
+    </noscript>
+
+    <!-- L’application React sera injectée ici -->
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
