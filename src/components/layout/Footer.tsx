@@ -76,7 +76,17 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-foreground/60">
             <p>&copy; 2025 JasminElite. Tous droits réservés.</p>
-            <p className="mt-2 md:mt-0">Conçu avec passion en Haute Savoie</p>
+            <p className="mt-2 md:mt-0">
+              Site réalisé par{" "}
+              <a
+                href="https://shahingharbi.com"
+                target="_blank"
+                rel="noopener"
+                className="text-accent hover:text-accent/80 transition-colors underline underline-offset-2"
+              >
+                création de site internet à Annemasse
+              </a>
+            </p>
           </div>
         </div>
       </div>
