@@ -19,28 +19,34 @@ import CookieBanner from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
+// Exported for SSR pre-rendering (entry-server.tsx uses StaticRouter around this)
+export const AppRoutes = () => (
+  <>
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/preparer-bien-location-saisonniere" element={<BlogArticle1 />} />
+      <Route path="/blog/pourquoi-conciergerie-haut-gamme" element={<BlogArticle2 />} />
+      <Route path="/Mentionslegales" element={<MentionsLegales />} />
+      <Route path="/Politique-confidentialite" element={<PolitiqueConfidentialite />} />
+      <Route path="/cgv" element={<CGV />} />
+      <Route path="/cookies" element={<Cookies />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+    <CookieBanner/>
+  </>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/preparer-bien-location-saisonniere" element={<BlogArticle1 />} />
-          <Route path="/blog/pourquoi-conciergerie-haut-gamme" element={<BlogArticle2 />} />
-          <Route path="/Mentionslegales" element={<MentionsLegales />} />
-          <Route path="/Politique-confidentialite" element={<PolitiqueConfidentialite />} />
-          <Route path="/cgv" element={<CGV />} />
-          <Route path="/cookies" element={<Cookies />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <CookieBanner/>
+        <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

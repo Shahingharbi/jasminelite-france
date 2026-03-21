@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Titre et description par défaut (écrasés par react-helmet-async par page) -->
-    <title>Conciergerie Annemasse | JasminElite — Gestion Locative Haute-Savoie</title>
+    <!-- Titre injecté par react-helmet-async (prerender en prod, JS en dev) -->
     <meta
       name="description"
       content="Conciergerie haut de gamme à Annemasse. JasminElite gère vos locations saisonnières Airbnb : annonce, ménage, check-in/out, photographie. +40% de revenus. Devis gratuit."
@@ -75,6 +74,7 @@
 
     <!-- Préchargement police -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- HELMET_TAGS -->
   </head>
 
   <body>
