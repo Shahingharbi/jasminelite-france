@@ -2,37 +2,82 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Camera, Calendar, Users, Home, Zap, Shield, Brush } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-services.jpg";
 import serviceListingImage from "@/assets/service-listing.jpg";
 import servicePhotoImage from "@/assets/service-photo.jpg";
 import serviceCommunicationImage from "@/assets/service-communication.jpg";
 import serviceMaintenanceImage from "@/assets/service-maintenance.jpg";
 
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Conciergerie & Gestion Locative",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "JasminElite Conciergerie",
+    "url": "https://jasmineliteconcierge.fr",
+    "telephone": "+33746281014",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Annemasse",
+      "addressRegion": "Haute-Savoie",
+      "addressCountry": "FR"
+    }
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Annemasse" },
+    { "@type": "AdministrativeArea", "name": "Haute-Savoie" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services de conciergerie Annemasse",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création d'annonce Airbnb optimisée" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photographie professionnelle" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Optimisation tarifaire dynamique" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestion de calendrier multi-plateformes" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Communication et suivi voyageurs 24/7" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Check-in et check-out personnalisé" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nettoyage professionnel" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blanchisserie et entretien du linge" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance et réparations" } }
+    ]
+  }
+};
+
 const Services = () => {
   return (
     <Layout>
+      <SEO
+        title="Services Conciergerie Annemasse | Gestion Locative Airbnb Haute-Savoie — JasminElite"
+        description="Découvrez nos services de conciergerie à Annemasse : création d'annonce Airbnb, photographie, check-in/out, nettoyage, gestion locative complète Haute-Savoie. Commission unique 20%."
+        canonical="/services"
+        schema={servicesSchema}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-transparent"></div>
         </div>
-        
+
         <div className="relative container-custom">
           <div className="max-w-3xl">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-white leading-tight">
-                Nos services de conciergerie haut de gamme
+                Services de conciergerie & gestion locative à Annemasse
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Une gamme complète de services pour maximiser vos revenus locatifs 
+                Une gamme complète de services pour maximiser vos revenus locatifs en Haute-Savoie
                 et vous offrir une tranquillité d'esprit totale.
               </p>
               <Link to="/contact" className="inline-block w-full sm:w-auto">
                 <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
-                  Demander un devis 
+                  Demander un devis
                 </Button>
               </Link>
             </div>
@@ -44,7 +89,7 @@ const Services = () => {
       <section className="section-spacing">
         <div className="container-custom">
           <div className="space-y-24">
-            
+
             {/* Bloc 1: Création d'annonce */}
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
@@ -53,13 +98,13 @@ const Services = () => {
                     <Home className="w-8 h-8 text-white" />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
-                    Création d'annonce optimisée
+                    Création d'annonce Airbnb optimisée
                   </h2>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                  Nous créons des annonces attractives et optimisées pour maximiser votre visibilité 
-                  sur toutes les plateformes de location saisonnière. Notre expertise du marché 
-                  en Haute Savoie nous permet de cibler les bons mots-clés et d'attirer les voyageurs idéaux.
+                  Nous créons des annonces attractives et optimisées pour maximiser votre visibilité
+                  sur Airbnb, Booking.com et toutes les plateformes de location saisonnière. Notre expertise du marché
+                  locatif en Haute-Savoie nous permet de cibler les bons mots-clés et d'attirer les voyageurs idéaux.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
@@ -82,9 +127,9 @@ const Services = () => {
               </div>
               <div className="lg:order-2">
                 <div className="rounded-2xl overflow-hidden shadow-elegant">
-                  <img 
-                    src={serviceListingImage} 
-                    alt="Création d'annonce professionnelle" 
+                  <img
+                    src={serviceListingImage}
+                    alt="Création d'annonce Airbnb professionnelle Annemasse"
                     width="500"
                     height="320"
                     className="w-full h-80 object-cover min-h-[300px]"
@@ -105,8 +150,8 @@ const Services = () => {
                   </h2>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                  Des photos de qualité exceptionnelle qui subliment votre propriété et attirent 
-                  plus de réservations. Nos photographes experts savent mettre en valeur chaque 
+                  Des photos de qualité exceptionnelle qui subliment votre propriété et attirent
+                  plus de réservations. Nos photographes experts savent mettre en valeur chaque
                   espace pour créer l'émotion et le désir chez vos futurs invités.
                 </p>
                 <ul className="space-y-3">
@@ -130,9 +175,9 @@ const Services = () => {
               </div>
               <div className="lg:order-1">
                 <div className="rounded-2xl overflow-hidden shadow-elegant">
-                  <img 
-                    src={servicePhotoImage} 
-                    alt="Photographie professionnelle d'intérieur" 
+                  <img
+                    src={servicePhotoImage}
+                    alt="Photographie professionnelle d'intérieur location saisonnière"
                     width="500"
                     height="320"
                     className="w-full h-80 object-cover min-h-[300px]"
@@ -153,8 +198,8 @@ const Services = () => {
                   </h2>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                  Nous prenons en charge toute la communication avec vos invités, de la réservation 
-                  au départ. Notre équipe professionnelle assure un accueil chaleureux et un 
+                  Nous prenons en charge toute la communication avec vos invités, de la réservation
+                  au départ. Notre équipe professionnelle assure un accueil chaleureux et un
                   service client d'exception 24h/24 et 7j/7.
                 </p>
                 <ul className="space-y-3">
@@ -182,9 +227,9 @@ const Services = () => {
               </div>
               <div className="lg:order-2">
                 <div className="rounded-2xl overflow-hidden shadow-elegant">
-                  <img 
-                    src={serviceCommunicationImage} 
-                    alt="Service clientèle et accueil des voyageurs" 
+                  <img
+                    src={serviceCommunicationImage}
+                    alt="Service clientèle et accueil des voyageurs Annemasse"
                     width="500"
                     height="320"
                     className="w-full h-80 object-cover min-h-[300px]"
@@ -205,8 +250,8 @@ const Services = () => {
                   </h2>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                  Votre propriété reste impeccable et fonctionnelle en permanence. Notre équipe 
-                  de professionnels qualifiés s'occupe de tout : du nettoyage approfondi à la 
+                  Votre propriété reste impeccable et fonctionnelle en permanence. Notre équipe
+                  de professionnels qualifiés s'occupe de tout : du nettoyage approfondi à la
                   maintenance préventive, en passant par les réparations d'urgence.
                 </p>
                 <ul className="space-y-3">
@@ -234,9 +279,9 @@ const Services = () => {
               </div>
               <div className="lg:order-1">
                 <div className="rounded-2xl overflow-hidden shadow-elegant">
-                  <img 
-                    src={serviceMaintenanceImage} 
-                    alt="Services de nettoyage et maintenance" 
+                  <img
+                    src={serviceMaintenanceImage}
+                    alt="Services de nettoyage et maintenance location saisonnière"
                     width="500"
                     height="320"
                     className="w-full h-80 object-cover min-h-[300px]"

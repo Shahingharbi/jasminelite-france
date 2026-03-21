@@ -4,99 +4,124 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- 🔹 Balises principales -->
-    <title>JasminElite - Conciergerie à Annemasse (Haute-Savoie)</title>
+    <!-- Titre et description par défaut (écrasés par react-helmet-async par page) -->
+    <title>Conciergerie Annemasse | JasminElite — Gestion Locative Haute-Savoie</title>
     <meta
       name="description"
-      content="Conciergerie haut de gamme à Annemasse. JasminElite gère vos locations saisonnières : création d’annonce, ménage, check-in/out, photographie, gestion complète. Commission transparente, tranquillité assurée."
+      content="Conciergerie haut de gamme à Annemasse. JasminElite gère vos locations saisonnières Airbnb : annonce, ménage, check-in/out, photographie. +40% de revenus. Devis gratuit."
     />
-    <meta name="author" content="JasminElite" />
+    <meta name="author" content="JasminElite Conciergerie" />
     <meta
       name="keywords"
-      content="conciergerie Annemasse, conciergerie Haute-Savoie, location saisonnière Annemasse, gestion locative, Airbnb Annemasse, conciergerie haut de gamme, JasminElite"
+      content="conciergerie Annemasse, gestion locative Annemasse, conciergerie Haute-Savoie, location saisonnière Annemasse, Airbnb Annemasse, conciergerie haut de gamme, gestion locative Haute-Savoie, JasminElite"
     />
+    <meta name="robots" content="index, follow" />
 
-    <!-- 🔹 Canonical URL -->
+    <!-- Canonical par défaut -->
     <link rel="canonical" href="https://jasmineliteconcierge.fr/" />
 
-    <!-- 🔹 Favicon -->
-    <link rel="icon" href="/src/assets/logo-jasminelite.png" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <!-- 🔹 Données structurées LocalBusiness (pour Google) -->
+    <!-- Open Graph par défaut -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jasmineliteconcierge.fr/" />
+    <meta property="og:title" content="Conciergerie Annemasse | JasminElite — Gestion Locative Haute-Savoie" />
+    <meta property="og:description" content="Conciergerie haut de gamme à Annemasse. Gestion complète de vos locations saisonnières Airbnb en Haute-Savoie." />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="JasminElite Conciergerie" />
+
+    <!-- Données structurées LocalBusiness (présentes dès le chargement initial) -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "JasminElite Conciergerie",
-        "image": "https://www.jasmineliteconcierge.fr/assets/logo-jasminelite-XDjmUPu7.png",
-        "url": "https://jasmineliteconcierge.fr/",
-        "telephone": "+33 7 46 28 10 14",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Annemasse",
-          "addressLocality": "Annemasse",
-          "addressRegion": "Haute-Savoie",
-          "addressCountry": "FR"
-        },
-        "areaServed": ["Annemasse", "Haute-Savoie", "Genève"],
-        "priceRange": "$$",
-        "description": "Conciergerie à Annemasse : gestion complète de locations saisonnières, ménage, check-in/out, optimisation des revenus."
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://jasmineliteconcierge.fr/#business",
+      "name": "JasminElite Conciergerie",
+      "image": "https://www.jasmineliteconcierge.fr/assets/logo-jasminelite-XDjmUPu7.png",
+      "url": "https://jasmineliteconcierge.fr/",
+      "telephone": "+33746281014",
+      "email": "contact@jasmineliteconcierge.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Annemasse",
+        "addressLocality": "Annemasse",
+        "postalCode": "74100",
+        "addressRegion": "Haute-Savoie",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.1952,
+        "longitude": 6.2344
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Annemasse" },
+        { "@type": "City", "name": "La Roche-sur-Foron" },
+        { "@type": "City", "name": "Collonges-sous-Salève" },
+        { "@type": "City", "name": "Saint-Jean-de-Sixt" },
+        { "@type": "AdministrativeArea", "name": "Haute-Savoie" }
+      ],
+      "priceRange": "$$",
+      "description": "Conciergerie haut de gamme à Annemasse. Gestion locative complète de vos locations saisonnières Airbnb et Booking.com en Haute-Savoie.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
       }
+    }
     </script>
 
-    <!-- 🔹 Feuille de style et script principal -->
-    <script type="module" src="/src/main.tsx"></script>
-
-    <!-- 🔹 Bonus SEO : préchargement de la police ou du logo -->
-    <link rel="preload" as="image" href="/src/assets/logo-jasminelite.png" />
+    <!-- Préchargement police -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
 
   <body>
-    <!-- 🔹 Contenu statique visible pour Google (important pour le référencement initial) -->
+    <!-- Contenu statique pour Google (fallback sans JS) -->
     <noscript>
-  <main>
-    <h1>Votre Conciergerie de confiance à Annemasse – JasminElite Concierge</h1>
-    <p>
-      Bienvenue chez <strong>JasminElite Conciergerie</strong>, votre partenaire de confiance pour la 
-      <strong>gestion locative haut de gamme à Annemasse et en Haute-Savoie</strong>. 
-      Nous accompagnons les propriétaires dans la <strong>location saisonnière</strong> de leurs biens 
-      avec des services complets : création d’annonce, photographie professionnelle, 
-      accueil des voyageurs, check-in / check-out, entretien et optimisation des revenus locatifs.
-    </p>
+      <main>
+        <h1>Conciergerie à Annemasse — JasminElite, votre expert en gestion locative Haute-Savoie</h1>
+        <p>
+          Bienvenue chez <strong>JasminElite Conciergerie</strong>, votre partenaire de confiance pour la
+          <strong>gestion locative haut de gamme à Annemasse et en Haute-Savoie</strong>.
+          Spécialistes de la <strong>location saisonnière Airbnb à Annemasse</strong>, nous accompagnons
+          les propriétaires avec des services complets : création d'annonce, photographie professionnelle,
+          accueil des voyageurs, check-in / check-out, ménage, blanchisserie et optimisation des revenus locatifs.
+        </p>
 
-    <h2>Des services premium pour vos locations saisonnières</h2>
-    <ul>
-      <li>Création d’annonce optimisée sur Airbnb et Booking</li>
-      <li>Photographie professionnelle pour valoriser votre bien</li>
-      <li>Accueil personnalisé et check-in / check-out 7j/7</li>
-      <li>Nettoyage, blanchisserie et maintenance</li>
-      <li>Optimisation des tarifs et gestion du calendrier</li>
-    </ul>
+        <h2>Services de conciergerie & gestion locative à Annemasse</h2>
+        <ul>
+          <li>Création et optimisation d'annonce Airbnb et Booking.com</li>
+          <li>Photographie professionnelle pour valoriser votre bien</li>
+          <li>Gestion de calendrier multi-plateformes</li>
+          <li>Communication voyageurs et check-in / check-out 7j/7</li>
+          <li>Nettoyage professionnel, blanchisserie et maintenance</li>
+          <li>Optimisation tarifaire dynamique pour maximiser vos revenus</li>
+        </ul>
 
-    <h2>Pourquoi choisir JasminElite à Annemasse ?</h2>
-    <p>
-      Située à <strong>Annemasse</strong>, notre conciergerie met l’accent sur la qualité, 
-      la transparence et la rentabilité. Grâce à notre connaissance du marché local, 
-      nous maximisons vos <strong>revenus locatifs</strong> tout en assurant une expérience sans tracas 
-      pour les propriétaires comme pour les voyageurs.
-    </p>
+        <h2>Pourquoi choisir JasminElite pour votre gestion locative à Annemasse ?</h2>
+        <p>
+          Votre <strong>conciergerie à Annemasse</strong> met l'accent sur la qualité,
+          la transparence et la rentabilité. Commission unique de 20% HT, sans frais cachés ni abonnement.
+          Nos clients constatent en moyenne <strong>+40% de revenus locatifs</strong> grâce à notre gestion professionnelle.
+        </p>
 
-    <h2>Zones d’intervention</h2>
-    <p>
-      JasminElite intervient dans toute la région d’<strong>Annemasse</strong>, 
-      ainsi qu’en <strong>Haute-Savoie</strong> et jusqu’à <strong>Genève</strong>. 
-      Que votre bien soit un appartement, une maison ou une villa, 
-      notre équipe s’occupe de tout pour garantir un service irréprochable.
-    </p>
+        <h2>Zones d'intervention — Conciergerie Haute-Savoie</h2>
+        <p>
+          JasminElite intervient dans toute la Haute-Savoie :
+          <strong>Annemasse</strong>, <strong>La Roche-sur-Foron</strong>,
+          <strong>Collonges-sous-Salève</strong>, <strong>Saint-Jean-de-Sixt</strong>,
+          ainsi que les zones frontalières avec <strong>Genève</strong> et le <strong>canton de Vaud</strong>.
+        </p>
 
-    <p><a href="/contact">Contactez-nous dès aujourd’hui</a> pour une estimation gratuite 
-      de vos revenus locatifs.</p>
-  </main>
-</noscript>
+        <p><a href="/contact">Contactez-nous</a> pour un audit gratuit de votre bien et une estimation de vos revenus locatifs.</p>
+        <p><a href="/services">Découvrez tous nos services de conciergerie à Annemasse</a></p>
+      </main>
+    </noscript>
 
-
-
-    <!-- L’application React sera injectée ici -->
+    <!-- Application React -->
     <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

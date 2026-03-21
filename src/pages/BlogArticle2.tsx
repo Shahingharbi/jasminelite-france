@@ -2,11 +2,32 @@ import { Link } from "react-router-dom";
 import { Calendar, User, ArrowLeft, TrendingUp, Shield, Clock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import conciergeImage from "@/assets/blog-concierge.jpg";
+
+const article2Schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Pourquoi passer par une conciergerie haut de gamme à Annemasse ?",
+  "description": "Les avantages d'une conciergerie professionnelle pour votre location Airbnb à Annemasse. ROI, tranquillité, optimisation des revenus locatifs en Haute-Savoie.",
+  "url": "https://jasmineliteconcierge.fr/blog/pourquoi-conciergerie-haut-gamme",
+  "datePublished": "2024-03-08",
+  "dateModified": "2024-03-08",
+  "author": { "@type": "Organization", "name": "JasminElite Conciergerie", "url": "https://jasmineliteconcierge.fr" },
+  "publisher": { "@type": "Organization", "name": "JasminElite Conciergerie", "url": "https://jasmineliteconcierge.fr" },
+  "image": "https://jasmineliteconcierge.fr/assets/blog-concierge.jpg",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jasmineliteconcierge.fr/blog/pourquoi-conciergerie-haut-gamme" }
+};
 
 const BlogArticle2 = () => {
   return (
     <Layout>
+      <SEO
+        title="Conciergerie Haut de Gamme Annemasse : Pourquoi en Choisir Une ? | JasminElite"
+        description="Les avantages d'une conciergerie professionnelle pour votre location Airbnb à Annemasse. ROI, tranquillité, optimisation des revenus locatifs en Haute-Savoie."
+        canonical="/blog/pourquoi-conciergerie-haut-gamme"
+        schema={article2Schema}
+      />
       {/* Article Header */}
       <section className="relative py-16 bg-beige-soft">
         <div className="container-custom">

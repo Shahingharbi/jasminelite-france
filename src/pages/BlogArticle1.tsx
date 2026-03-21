@@ -2,11 +2,32 @@ import { Link } from "react-router-dom";
 import { Calendar, User, ArrowLeft, CheckCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import preparationImage from "@/assets/blog-preparation.jpg";
+
+const article1Schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Préparer son bien à la location saisonnière à Annemasse",
+  "description": "Guide complet pour préparer votre appartement à la location saisonnière en Haute-Savoie. Conseils aménagement, photos, tarification Airbnb.",
+  "url": "https://jasmineliteconcierge.fr/blog/preparer-bien-location-saisonniere",
+  "datePublished": "2024-03-15",
+  "dateModified": "2024-03-15",
+  "author": { "@type": "Organization", "name": "JasminElite Conciergerie", "url": "https://jasmineliteconcierge.fr" },
+  "publisher": { "@type": "Organization", "name": "JasminElite Conciergerie", "url": "https://jasmineliteconcierge.fr" },
+  "image": "https://jasmineliteconcierge.fr/assets/blog-preparation.jpg",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://jasmineliteconcierge.fr/blog/preparer-bien-location-saisonniere" }
+};
 
 const BlogArticle1 = () => {
   return (
     <Layout>
+      <SEO
+        title="Préparer son Bien à la Location Saisonnière à Annemasse | JasminElite"
+        description="Guide complet pour préparer votre appartement à la location saisonnière en Haute-Savoie. Conseils aménagement, photographie, tarification Airbnb et gestion locative."
+        canonical="/blog/preparer-bien-location-saisonniere"
+        schema={article1Schema}
+      />
       {/* Article Header */}
       <section className="relative py-16 bg-beige-soft">
         <div className="container-custom">

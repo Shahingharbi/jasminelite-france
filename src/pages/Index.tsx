@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Star, Users, Shield, Sparkles, Camera, Calendar, Zap, Home, Brush, Shirt } from "lucide-react";
+import { Star, Users, Shield, Sparkles, Camera, Calendar, Zap, Home, Brush, Shirt, MapPin, ChevronDown } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { EstimationModal } from "@/components/ui/EstimationModal";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-home.jpg";
 import stepAuditImage from "@/assets/step-audit.jpg";
 import stepListingImage from "@/assets/step-listing.jpg";
@@ -12,12 +13,101 @@ import appart1 from "@/assets/appart-1.jpg";
 import appart2 from "@/assets/appart-2.jpg";
 import appart3 from "@/assets/appart-3.jpg";
 
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://jasmineliteconcierge.fr/#business",
+      "name": "JasminElite Conciergerie",
+      "image": "https://www.jasmineliteconcierge.fr/assets/logo-jasminelite-XDjmUPu7.png",
+      "url": "https://jasmineliteconcierge.fr/",
+      "telephone": "+33746281014",
+      "email": "contact@jasmineliteconcierge.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Annemasse",
+        "addressLocality": "Annemasse",
+        "postalCode": "74100",
+        "addressRegion": "Haute-Savoie",
+        "addressCountry": "FR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 46.1952,
+        "longitude": 6.2344
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Annemasse" },
+        { "@type": "City", "name": "La Roche-sur-Foron" },
+        { "@type": "City", "name": "Collonges-sous-Salève" },
+        { "@type": "City", "name": "Saint-Jean-de-Sixt" },
+        { "@type": "AdministrativeArea", "name": "Haute-Savoie" }
+      ],
+      "priceRange": "$$",
+      "description": "Conciergerie haut de gamme à Annemasse spécialisée dans la gestion locative saisonnière. Services Airbnb, Booking.com, check-in/out, ménage, photographie professionnelle.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Combien coûte la conciergerie JasminElite à Annemasse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JasminElite applique une commission unique de 20% HT sur chaque réservation confirmée. Aucun frais fixe, aucun abonnement mensuel. Vous ne payez que lorsque vous percevez des revenus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quels services propose la conciergerie JasminElite à Annemasse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JasminElite propose la gestion complète de vos locations saisonnières : création et optimisation d'annonces Airbnb et Booking.com, photographie professionnelle, gestion du calendrier, communication voyageurs 24/7, check-in et check-out personnalisés, ménage professionnel, blanchisserie et maintenance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dans quelles zones intervenez-vous autour d'Annemasse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JasminElite intervient dans toute la Haute-Savoie : Annemasse, La Roche-sur-Foron, Collonges-sous-Salève, Saint-Jean-de-Sixt, et les zones frontalières avec Genève (canton de Vaud). Contactez-nous pour vérifier la disponibilité dans votre commune."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Combien puis-je gagner avec la location saisonnière à Annemasse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nos clients constatent en moyenne une augmentation de 40% de leurs revenus locatifs grâce à notre optimisation tarifaire dynamique et notre gestion professionnelle. Demandez votre estimation gratuite pour connaître le potentiel exact de votre bien."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "La conciergerie JasminElite gère-t-elle les annonces Airbnb à Annemasse ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, JasminElite est spécialisée dans la gestion Airbnb à Annemasse. Nous créons et optimisons vos annonces, gérons les réservations, répondons aux voyageurs et assurons tous les services opérationnels pour maximiser votre taux d'occupation."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 const Index = () => {
   const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
-  
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   const scrollingItems = [
     "Toute l'Haute Savoie",
-    "Revenus complémentaires", 
+    "Revenus complémentaires",
     "Taux d'occupation élevé",
     "Zéro tracas, 100% sérénité"
   ];
@@ -26,7 +116,7 @@ const Index = () => {
     {
       icon: Home,
       title: "Création d'annonce",
-      description: "Rédigeons et optimisons vos annonces pour maximiser votre visibilité"
+      description: "Rédigeons et optimisons vos annonces Airbnb & Booking pour maximiser votre visibilité"
     },
     {
       icon: Camera,
@@ -70,38 +160,52 @@ const Index = () => {
     }
   ];
 
-  const testimonials = [
+  const faqs = [
     {
-      name: "Amina B.",
-      location: "Annemasse",
-      text: "Grâce à JasminElite, mes revenus locatifs ont augmenté de 40% ! Leur service est impeccable et je n'ai plus aucun souci de gestion.",
-      rating: 5
+      question: "Combien coûte la conciergerie à Annemasse ?",
+      answer: "JasminElite applique une commission unique de 20% HT sur chaque réservation confirmée. Aucun frais fixe, aucun abonnement. Vous ne payez que lorsque vous gagnez."
     },
     {
-      name: "Karim M.",
-      location: "Oran",
-      text: "Une équipe professionnelle et réactive. Mes invités sont toujours satisfaits de l'accueil et du service. Je recommande vivement !",
-      rating: 5
+      question: "Quels services propose votre conciergerie à Annemasse ?",
+      answer: "Nous prenons en charge la gestion complète : création d'annonce Airbnb optimisée, photographie professionnelle, gestion du calendrier multi-plateformes, communication voyageurs 24/7, check-in/out personnalisé, ménage, blanchisserie et maintenance."
     },
     {
-      name: "Sarah L.",
-      location: "Constantine",
-      text: "Enfin une conciergerie qui comprend le marché Haute Savoien ! Service haut de gamme et tarifs transparents. Parfait pour mes appartements.",
-      rating: 5
+      question: "Dans quelles zones de Haute-Savoie intervenez-vous ?",
+      answer: "JasminElite intervient à Annemasse et dans toute la Haute-Savoie : La Roche-sur-Foron, Collonges-sous-Salève, Saint-Jean-de-Sixt, et les zones frontalières avec Genève. Contactez-nous pour vérifier la disponibilité dans votre commune."
+    },
+    {
+      question: "Combien puis-je gagner avec la location saisonnière à Annemasse ?",
+      answer: "Nos clients constatent en moyenne une augmentation de 40% de leurs revenus grâce à notre pricing dynamique et notre gestion professionnelle. Demandez votre estimation gratuite pour connaître le potentiel exact de votre bien."
+    },
+    {
+      question: "Gérez-vous les annonces Airbnb à Annemasse ?",
+      answer: "Oui, nous sommes spécialisés dans la gestion Airbnb à Annemasse. Nous créons et optimisons vos annonces, gérons les réservations et assurons tous les services pour maximiser votre taux d'occupation."
     }
+  ];
+
+  const zones = [
+    "Annemasse", "La Roche-sur-Foron", "Collonges-sous-Salève",
+    "Saint-Jean-de-Sixt", "Haute-Savoie", "Genève"
   ];
 
   return (
     <Layout>
+      <SEO
+        title="Conciergerie Annemasse | JasminElite — Gestion Locative Haute-Savoie"
+        description="Conciergerie haut de gamme à Annemasse. JasminElite gère vos locations saisonnières Airbnb : annonce, ménage, check-in/out, photographie. +40% de revenus. Devis gratuit."
+        canonical="/"
+        schema={homeSchema}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-transparent"></div>
         </div>
-        
+
         <div className="relative container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -110,14 +214,13 @@ const Index = () => {
                   Votre conciergerie de confiance à Annemasse
                 </h1>
                 <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
-                  Maximisez vos revenus locatifs avec notre service d'excellence. 
-                  Nous gérons tout, de A à Z, pour que vous puissiez profiter 
-                  de vos investissements en toute sérénité.
+                  Maximisez vos revenus locatifs avec notre service de gestion locative d'excellence en Haute-Savoie.
+                  Nous gérons tout de A à Z — Airbnb, Booking.com et plus — pour que vous profitez de vos investissements en toute sérénité.
                 </p>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <Button 
+                <Button
                   onClick={() => setIsEstimationModalOpen(true)}
                   className="btn-golden text-lg px-8 py-4 w-full sm:w-auto"
                 >
@@ -160,7 +263,7 @@ const Index = () => {
               Conciergerie à Annemasse : Comment ça marche ?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Un processus simple et efficace pour optimiser vos revenus locatifs
+              Un processus simple et efficace pour optimiser vos revenus locatifs en Haute-Savoie
             </p>
           </div>
 
@@ -177,18 +280,18 @@ const Index = () => {
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Nous analysons votre propriété, le marché local et définissons ensemble 
-                  la stratégie optimale pour maximiser vos revenus. Notre expertise du 
-                  marché en Haute Savoie nous permet de vous proposer les meilleures solutions.
+                  Nous analysons votre propriété, le marché locatif local et définissons ensemble
+                  la stratégie optimale pour maximiser vos revenus. Notre expertise de la
+                  gestion locative en Haute-Savoie nous permet de vous proposer les meilleures solutions.
                 </p>
                 <ul className="space-y-2 text-foreground/70">
                   <li className="flex items-center space-x-2">
                     <Star className="w-4 h-4 text-accent" />
-                    <span>Évaluation du potentiel locatif</span>
+                    <span>Évaluation du potentiel locatif Airbnb</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <Star className="w-4 h-4 text-accent" />
-                    <span>Analyse de la concurrence</span>
+                    <span>Analyse de la concurrence à Annemasse</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <Star className="w-4 h-4 text-accent" />
@@ -198,9 +301,9 @@ const Index = () => {
               </div>
               <div className="lg:order-2">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
-                  <img 
+                  <img
                     src={stepAuditImage}
-                    alt="Audit professionnel de propriété"
+                    alt="Audit professionnel de propriété Annemasse"
                     width="500"
                     height="320"
                     className="w-full h-full object-cover rounded-xl min-h-[200px]"
@@ -221,9 +324,9 @@ const Index = () => {
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Nous créons des annonces attractives avec des photos professionnelles 
-                  et un descriptif optimisé. Votre bien est mis en ligne sur toutes les 
-                  plateformes principales pour maximiser la visibilité.
+                  Nous créons des annonces attractives avec des photos professionnelles
+                  et un descriptif optimisé. Votre bien est mis en ligne sur Airbnb,
+                  Booking.com et toutes les plateformes principales pour maximiser la visibilité.
                 </p>
                 <ul className="space-y-2 text-foreground/70">
                   <li className="flex items-center space-x-2">
@@ -242,9 +345,9 @@ const Index = () => {
               </div>
               <div className="lg:order-1">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
-                  <img 
-                    src={stepListingImage} 
-                    alt="Optimisation d'annonces immobilières"
+                  <img
+                    src={stepListingImage}
+                    alt="Optimisation d'annonces Airbnb Annemasse"
                     width="500"
                     height="320"
                     className="w-full h-full object-cover rounded-xl min-h-[200px]"
@@ -261,12 +364,12 @@ const Index = () => {
                     3
                   </div>
                   <h3 className="text-2xl md:text-3xl font-alice font-bold text-primary">
-                    Gestion complète et sérénité
+                    Gestion locative complète et sérénité
                   </h3>
                 </div>
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Relaxez-vous ! Nous nous occupons de tout : accueil des voyageurs, 
-                  nettoyage, maintenance, communication. Vous recevez vos revenus 
+                  Relaxez-vous ! Nous nous occupons de tout : accueil des voyageurs,
+                  nettoyage, maintenance, communication. Vous recevez vos revenus
                   directement, sans aucun tracas.
                 </p>
                 <Link to="/contact" className="inline-block w-full sm:w-auto">
@@ -277,9 +380,9 @@ const Index = () => {
               </div>
               <div className="lg:order-2">
                 <div className="rounded-2xl p-8 h-80 overflow-hidden">
-                  <img 
+                  <img
                     src={stepManagementImage}
-                    alt="Gestion complète et service premium"
+                    alt="Gestion locative complète Haute-Savoie"
                     width="500"
                     height="320"
                     className="w-full h-full object-cover rounded-xl min-h-[200px]"
@@ -298,11 +401,11 @@ const Index = () => {
             <div className="flex items-center justify-center space-x-3 mb-4">
               <Sparkles className="w-8 h-8 text-accent" />
               <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
-                Nos services
+                Nos services de conciergerie
               </h2>
             </div>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Une gamme complète de services pour optimiser votre location saisonnière
+              Une gamme complète de services pour optimiser votre gestion locative à Annemasse et en Haute-Savoie
             </p>
           </div>
 
@@ -353,7 +456,7 @@ const Index = () => {
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
               <img
                 src={appart1}
-                alt="Appartement en gestion JasminElite"
+                alt="Appartement en gestion JasminElite Annemasse"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -361,7 +464,7 @@ const Index = () => {
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
               <img
                 src={appart2}
-                alt="Appartement en gestion JasminElite"
+                alt="Location saisonnière gérée par JasminElite"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -369,7 +472,7 @@ const Index = () => {
             <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
               <img
                 src={appart3}
-                alt="Appartement en gestion JasminElite"
+                alt="Appartement Airbnb Annemasse géré par JasminElite"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -378,41 +481,86 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-spacing hidden">
+      {/* Zones d'intervention */}
+      <section className="section-spacing bg-beige-soft">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary mb-4">
-              Ils nous font confiance
-            </h2>
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <MapPin className="w-8 h-8 text-accent" />
+              <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
+                Zones d'intervention
+              </h2>
+            </div>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Découvrez les témoignages de nos clients satisfaits
+              Conciergerie et gestion locative dans toute la Haute-Savoie et région frontalière
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="card-elegant">
-                <div className="flex items-center space-x-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
-                  ))}
-                </div>
-                <p className="text-foreground/80 leading-relaxed mb-6 italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="border-t border-border pt-4">
-                  <p className="font-semibold text-primary">{testimonial.name}</p>
-                  <p className="text-sm text-foreground/60">{testimonial.location}</p>
-                </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {zones.map((zone) => (
+              <div key={zone} className="flex items-center space-x-2 bg-card px-6 py-3 rounded-full shadow-sm border border-border">
+                <MapPin className="w-4 h-4 text-accent" />
+                <span className="font-medium text-primary">{zone}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary mb-4">
+                Questions fréquentes sur notre conciergerie à Annemasse
+              </h2>
+              <p className="text-lg text-foreground/70">
+                Tout ce que vous devez savoir sur notre service de gestion locative
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {faqs.map((faq, index) => (
+                <div key={index} className="card-elegant">
+                  <button
+                    className="w-full flex items-center justify-between text-left"
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                  >
+                    <h3 className="text-lg font-alice font-semibold text-primary pr-4">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={`w-5 h-5 text-accent flex-shrink-0 transition-transform duration-200 ${openFaq === index ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {openFaq === index && (
+                    <p className="mt-4 text-foreground/70 leading-relaxed border-t border-border pt-4">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link to="/contact" className="inline-block w-full sm:w-auto">
+                <Button className="btn-golden text-lg px-8 py-4 w-full max-w-xs mx-auto sm:w-auto">
+                  Demander un devis gratuit
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials - hidden for now */}
+      <section className="section-spacing hidden">
+        <div className="container-custom"></div>
+      </section>
+
       {/* Estimation Modal */}
-      <EstimationModal 
+      <EstimationModal
         isOpen={isEstimationModalOpen}
         onClose={() => setIsEstimationModalOpen(false)}
       />

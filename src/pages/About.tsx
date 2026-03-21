@@ -2,30 +2,37 @@ import { Link } from "react-router-dom";
 import { Heart, Award, Shield, Users, Zap, Target } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import SEO from "@/components/SEO";
 import heroImage from "@/assets/hero-about.jpg";
 import teamImage from "@/assets/about-team.jpg";
 
 const About = () => {
   return (
     <Layout>
+      <SEO
+        title="À Propos | Conciergerie JasminElite Annemasse — Expert Gestion Locative Haute-Savoie"
+        description="Découvrez JasminElite, votre conciergerie de confiance à Annemasse. Spécialiste de la gestion locative en Haute-Savoie : expertise locale, transparence et excellence haut de gamme."
+        canonical="/about"
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60"></div>
         </div>
-        
+
         <div className="relative container-custom">
           <div className="max-w-4xl">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-alice font-bold text-white leading-tight">
-                Votre partenaire de confiance pour la conciergerie haut de gamme
+                Votre partenaire de confiance pour la conciergerie et gestion locative en Haute-Savoie
               </h1>
               <p className="text-xl md:text-2xl text-white/90 leading-relaxed">
-                Depuis notre création, nous révolutionnons la gestion locative en Haute Savoie 
-                en alliant expertise locale, technologie moderne et service d'exception 
+                Depuis notre création, nous révolutionnons la gestion locative à Annemasse
+                en alliant expertise locale, technologie moderne et service d'exception
                 pour maximiser vos revenus en toute sérénité.
               </p>
               <Link to="/contact" className="inline-block w-full sm:w-auto">
@@ -46,52 +53,50 @@ const About = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Heart className="w-8 h-8 text-accent" />
-                  
-                <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
-                  Notre histoire
-                </h2>
-              </div>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Haute Savoie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local.
-              </p>
-
-              <div className="space-y-6">
-                <p className="text-foreground/70 leading-relaxed">
-                  Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché Haut-Savoyards et réseau de partenaires qualifiés sur l'ensemble du territoire. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs.
-                </p>
-                
-                <p className="text-foreground/70 leading-relaxed">
-                  Spécialisés dans la gestion premium de propriétés, nous maîtrisons tous les aspects du secteur : du revenue management aux dernières technologies de l'hospitalité, en passant par les réglementations locales et les tendances du marché international.
+                  <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
+                    Notre histoire
+                  </h2>
+                </div>
+                <p className="text-lg text-foreground/80 leading-relaxed">
+                  JasminElite Conciergerie est née d'une vision ambitieuse : révolutionner la gestion locative en Haute-Savoie en apportant des standards d'excellence internationaux adaptés aux spécificités de notre marché local autour d'Annemasse.
                 </p>
 
-                <p className="text-foreground/70 leading-relaxed">
-                  Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires en Haute Savoie, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
-                </p>
-              </div>
-              </div>
+                <div className="space-y-6">
+                  <p className="text-foreground/70 leading-relaxed">
+                    Notre approche unique combine expertise technologique avancée, connaissance approfondie du marché haut-savoyand et réseau de partenaires qualifiés. Cette synergie nous permet d'offrir à nos clients une solution complète et sur-mesure pour optimiser leurs revenus locatifs à Annemasse, La Roche-sur-Foron, Collonges-sous-Salève et dans toute la région.
+                  </p>
 
+                  <p className="text-foreground/70 leading-relaxed">
+                    Spécialisés dans la gestion premium de propriétés, nous maîtrisons tous les aspects du secteur : du revenue management aux dernières technologies de l'hospitalité, en passant par les réglementations locales et les tendances du marché international — y compris le marché frontalier de Genève et du canton de Vaud.
+                  </p>
+
+                  <p className="text-foreground/70 leading-relaxed">
+                    Notre mission est claire : démocratiser l'accès à la gestion locative professionnelle pour tous les propriétaires en Haute-Savoie, en leur offrant les outils et l'expertise nécessaires pour transformer leurs biens en investissements performants et rentables.
+                  </p>
+                </div>
+              </div>
 
               <div className="grid grid-cols-3 gap-4">
-  <div className="text-center p-4 bg-beige-soft rounded-xl">
-    <div className="text-2xl font-alice font-bold text-accent mb-1">24/7</div>
-    <div className="text-sm text-foreground/70">Support client</div>
-  </div>
-  <div className="text-center p-4 bg-beige-soft rounded-xl">
-    <div className="text-2xl font-alice font-bold text-accent mb-1">20%</div>
-    <div className="text-sm text-foreground/70">Commission unique</div>
-  </div>
-  <div className="text-center p-4 bg-beige-soft rounded-xl">
-    <div className="text-2xl font-alice font-bold text-accent mb-1">0%</div>
-    <div className="text-sm text-foreground/70">Frais cachés</div>
-  </div>
-</div>
+                <div className="text-center p-4 bg-beige-soft rounded-xl">
+                  <div className="text-2xl font-alice font-bold text-accent mb-1">24/7</div>
+                  <div className="text-sm text-foreground/70">Support client</div>
+                </div>
+                <div className="text-center p-4 bg-beige-soft rounded-xl">
+                  <div className="text-2xl font-alice font-bold text-accent mb-1">20%</div>
+                  <div className="text-sm text-foreground/70">Commission unique</div>
+                </div>
+                <div className="text-center p-4 bg-beige-soft rounded-xl">
+                  <div className="text-2xl font-alice font-bold text-accent mb-1">0%</div>
+                  <div className="text-sm text-foreground/70">Frais cachés</div>
+                </div>
+              </div>
             </div>
 
             <div className="lg:order-2">
               <div className="rounded-2xl overflow-hidden shadow-elegant">
-                <img 
-                  src={teamImage} 
-                  alt="Équipe JasminElite Conciergerie" 
+                <img
+                  src={teamImage}
+                  alt="Équipe JasminElite Conciergerie Annemasse"
                   width="500"
                   height="384"
                   className="w-full h-96 object-cover min-h-[300px]"
@@ -139,8 +144,8 @@ const About = () => {
                     <span>Excellence</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    Nous visons l'excellence dans chaque interaction, chaque service rendu, 
-                    et chaque détail de la gestion de vos propriétés. Notre standard de qualité 
+                    Nous visons l'excellence dans chaque interaction, chaque service rendu,
+                    et chaque détail de la gestion de vos propriétés. Notre standard de qualité
                     est sans compromis.
                   </p>
                 </div>
@@ -151,7 +156,7 @@ const About = () => {
                     <span>Confiance</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    La confiance est au cœur de notre relation avec nos clients. Transparence, 
+                    La confiance est au cœur de notre relation avec nos clients. Transparence,
                     intégrité et communication constante sont les piliers de notre approche.
                   </p>
                 </div>
@@ -162,8 +167,8 @@ const About = () => {
                     <span>Innovation</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    Nous intégrons constamment les dernières technologies et les meilleures 
-                    pratiques pour optimiser la rentabilité et simplifier la gestion.
+                    Nous intégrons constamment les dernières technologies et les meilleures
+                    pratiques pour optimiser la rentabilité et simplifier la gestion locative.
                   </p>
                 </div>
 
@@ -173,18 +178,18 @@ const About = () => {
                     <span>Proximité</span>
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
-                    Notre connaissance approfondie du marché Haut-Savoyards et notre présence locale 
-                    nous permettent d'offrir un service personnalisé et adapté à vos besoins.
+                    Notre connaissance approfondie du marché haut-savoyand et notre présence locale
+                    à Annemasse nous permettent d'offrir un service personnalisé et adapté à vos besoins.
                   </p>
                 </div>
               </div>
 
               <div className="pt-4">
-                  <Link to="/services" className="inline-block w-full sm:w-auto">
-                    <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full max-w-xs mx-auto sm:w-auto">
-                      Découvrir nos services
-                    </Button>
-                  </Link>
+                <Link to="/services" className="inline-block w-full sm:w-auto">
+                  <Button variant="outline" className="text-lg px-8 py-4 border-accent text-accent hover:bg-accent hover:text-white w-full max-w-xs mx-auto sm:w-auto">
+                    Découvrir nos services
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -204,7 +209,7 @@ const About = () => {
                   Prêt à nous faire confiance ?
                 </h2>
                 <p className="text-lg text-foreground/80 leading-relaxed max-w-2xl mx-auto">
-                  Rejoignez les propriétaires visionnaires qui ont choisi l'excellence. Découvrons ensemble le potentiel de vos biens.
+                  Rejoignez les propriétaires visionnaires d'Annemasse et de Haute-Savoie qui ont choisi l'excellence. Découvrons ensemble le potentiel de vos biens.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                   <Link to="/contact" className="w-full sm:w-auto">
