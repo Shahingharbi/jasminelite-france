@@ -8,6 +8,9 @@ import heroImage from "@/assets/hero-home.jpg";
 import stepAuditImage from "@/assets/step-audit.jpg";
 import stepListingImage from "@/assets/step-listing.jpg";
 import stepManagementImage from "@/assets/step-management.jpg";
+import appart1 from "@/assets/appart-1.jpg";
+import appart2 from "@/assets/appart-2.jpg";
+import appart3 from "@/assets/appart-3.jpg";
 
 const Index = () => {
   const [isEstimationModalOpen, setIsEstimationModalOpen] = useState(false);
@@ -327,6 +330,50 @@ const Index = () => {
                 Découvrez tous nos services
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="section-spacing">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <Camera className="w-8 h-8 text-accent" />
+              <h2 className="text-3xl md:text-4xl font-alice font-bold text-primary">
+                Nos biens en gestion
+              </h2>
+            </div>
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+              Des logements soigneusement entretenus pour offrir une expérience haut de gamme à chaque voyageur
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
+              <img
+                src={appart1}
+                alt="Appartement en gestion JasminElite"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
+              <img
+                src={appart2}
+                alt="Appartement en gestion JasminElite"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="group relative overflow-hidden rounded-2xl aspect-[4/3] shadow-elegant">
+              <img
+                src={appart3}
+                alt="Appartement en gestion JasminElite"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </div>
         </div>
       </section>
