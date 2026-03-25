@@ -84,7 +84,7 @@ const Footer = () => {
                 rel="noopener"
                 className="text-accent hover:text-accent/80 transition-colors underline underline-offset-2"
               >
-                création de site internet à Annemasse
+                Shahin Gharbi
               </a>
             </p>
           </div>
